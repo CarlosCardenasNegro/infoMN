@@ -1,0 +1,558 @@
+<!-- V 7.0 / 02/10/2024 -->
+<!-- Versión responsive desde 13/09/2024 -->
+<!-- OBJETIVOS: -->
+<!-- 1) Mejoras en el diseño de las cards -->
+<!-- 2) Mejoras en el diseño responsive: OK -->
+<!-- 3) Terminar lo del idioma: OK -->
+<!--  -->
+<!doctype html>
+<html>
+
+<head>
+	<meta lang="es">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0" />
+	<meta name="title" content="InfoMN ® | Nuclear Medicine Information Utility">
+	<meta name="description"
+		content="InfoMN es una utilidad de información sobre la especialidad médica denominada Medicina Nuclear dirigida principalmente a los pacientes para su mejor conocimiento de nuestras exploraciones y lo que debe esperar al acudir a un Servicio de Medicina Nuclear.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fontcustom/fontcustom.css">
+	<link rel="stylesheet" href="css/subir.css">
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/themes/blue.css">
+	<link rel="icon" type="imgage/svg+xml" href="media/favicon.png">
+	<title>InfoMN ® | Nuclear Medicine Information Utility</title>
+</head>
+
+<body>
+	<span class="subir"><a href="#">Subir&#x2003</a><i class="icon-arrow-small-up"></i></span>
+
+	<div class="container mn-theme-container">
+
+		<header class="mn-theme-header">
+			<!-- movil -->
+			<div class="icon-movil">
+				<div class="toggle">
+					<i class="icon-bars-solid"></i>
+					<i class="icon-close-solid"></i>
+				</div>
+				<div class="lupa">
+					<i class="icon-lupa-solid"></i>
+					<i class="icon-close-solid"></i>
+				</div>
+				<div class="flag">
+					<img src="media/images/flags/flag-es.svg" style="width: 25px; height: auto;">
+				</div>
+<!-- 				<div class="calendar">
+					<i class="icon-calendar-solid"></i>
+				</div>
+ -->			</div>
+
+			<a href="#" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
+
+			<!-- NOTA: CAMBIO A NUEVO MENU CLASS - 26/10/2024 12:11	-->
+			<nav class="menu">
+				<ul>
+					<li class="mn-theme-menu-1"><a href="index.html" title="Volver al inicio">Inicio</a></li>
+					<li><a href="" title="La Medicina nuclear...">Conócenos</a>
+						<ul>
+							<li><a href="#Pag2" title="Que hacemos">Lo que hacemos</a></li>
+							<li><a href="#Pag3" title="Como lo hacemos">Como lo hacemos</a></li>
+						</ul>
+					</li>
+					<li><a href="#Pag4" title="Pruebas diagnósticas">Pruebas</a></li>
+					<li><a href="" title="Usuarios...">Login</a></li>
+					<li class="language"><a href="" title="Seleccionar Idioma...">Idioma</a>
+						<ul>
+							<!-- <div class="language_toggle"><span>&#x2039;</span></div> -->
+							<li><a><img src="media/images/flags/flag-de.svg" alt="" data="de" />Deutsch</a></li>
+							<li><a><img src="media/images/flags/flag-en.svg" alt="" data="en" />English</a></li>
+							<li><a><img src="media/images/flags/flag-es.svg" alt="" data="es" />Español</a></li>
+							<li><a><img src="media/images/flags/flag-fr.svg" alt="" data="fr" />Français</a></li>
+							<li><a><img src="media/images/flags/flag-it.svg" alt="" data="it" />Italiano</a></li>
+							<li><a><img src="media/images/flags/flag-jp.svg" alt="" data="ja" />日本語</a></li>
+							<li><a><img src="media/images/flags/flag-zh.svg" alt="" data="zh" />普通话</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<input class="search" type="text" id="buscar" title="Buscar en la página" placeholder="Buscar..."
+				onchange="alert(this.value);this.value=''" />
+
+		</header>
+
+		<section id="Pag1" class="banner mn-theme">
+			<h1 class="mn-text-center">Medicina Nuclear</h1>
+			<span>
+				<h2 class="mn-text-center">Aprovechando las energías que unen la naturaleza en favor de la salud de nuestros
+					pacientes</h2>
+				<div class="img flex flex-content-center"><img src="media/Medicina nuclear_4.webp" /></div>
+			</span>
+		</section>
+
+		<section id="Pag2" class="banner mn-theme-inverse">
+			<h1 class="mn-text-theme-2 mn-text-center">¿Que hacemos?</h1>
+			<h2 class="mn-text-theme-1 mn-text-left animate_entrada">Múltiples opciones</h2>
+			<p class="mn-text-justify">La Medicina Nuclear dispone de múltiples procedimientos diagnósticos que van dirigidos
+				a valorar el estado de
+				casi cada órgano o sistema de nuestro cuerpo. El objetivo de cada una de nuestras exploraciones es intentar
+				encontrar cual es el origen de sus dolencias.</p>
+			<h2 class="mn-text-right mn-italic animate_entrada">...también en terapia...</h2>
+			<p class="mn-text-justify">Contamos, asi mismo, con algunos procedimientos terapéuticos altamente especializados.
+				Uno de ellos, el
+				tratamiento de los problemas del tiroides, se practica desde mediados del siglo pasado con gran éxito y todavía
+				se considera uno de sus terapias más eficaces. </p>
+			<div class="img flex flex-content-center flex-items-center">
+				<div class="scene">
+					<div class="carousel">
+						<div class="carousel__cell" style="--i:0"><img src="media/images/MN/neurologia/JPEG/brain_pet.jpeg"
+								alt="amiloid image" /></div>
+						<div class="carousel__cell" style="--i:1"><img src="media/images/MN/traumareuma/JPEG/articular_spot.jpeg"
+								alt="Bone scan spot image" /></div>
+						<div class="carousel__cell" style="--i:2"><img src="media/images/MN/cardiologia/JPEG/cardiac.jpeg"
+								alt="cardiac processing image" /></div>
+						<div class="carousel__cell" style="--i:3"><img src="media/images/MN/oncologia/JPEG/centinela.jpeg"
+								alt="Centinel node image" /></div>
+						<div class="carousel__cell" style="--i:4"><img src="media/images/MN/neurologia/JPEG/ioflupano.jpeg"
+								alt="Ioflupane striatal image" /></div>
+						<div class="carousel__cell" style="--i:5"><img src="media/images/MN/nefrourologia/JPEG/renal.jpeg"
+								alt="Ioflupane striatal image" /></div>
+						<div class="carousel__cell" style="--i:6"><img src="media/images/MN/miscelanea/JPEG/linfo.jpeg"
+								alt="Linphography image" /></div>
+						<div class="carousel__cell" style="--i:7"><img src="media/images/MN/cardiologia/JPEG/mibi.jpeg"
+								alt="Miocardial image" /></div>
+						<div class="carousel__cell" style="--i:8"><img src="media/images/MN/oncologia/JPEG/pet.jpeg"
+								alt="Pet image" /> </div>
+						<div class="carousel__cell" style="--i:9"><img src="media/images/MN/oncologia/JPEG/sirt.jpeg"
+								alt="SIRT image" /></div>
+						<div class="carousel__cell" style="--i:10"><img src="media/images/MN/endocrinologia/JPEG/paratiroides.jpeg"
+								alt="Parathyroid image" /></div>
+						<div class="carousel__cell" style="--i:11"><img src="media/images/MN/traumareuma/JPEG/wb.jpeg"
+								alt="Bone scan image" /></div>
+						<div class="carousel__cell" style="--i:12"><img src="media/images/MN/nefrourologia/JPEG/renograma.jpeg"
+								alt="Renography processing" /></div>
+						<div class="carousel__cell" style="--i:13"><img src="media/images/MN/endocrinologia/JPEG/tiroidea.jpeg"
+								alt="Thyroid image" /></div>
+					</div>
+				</div>
+			</div>
+			<h2 class="animate_entrada">y...seguimos avanzando...</h2>
+			<p class="mn-text-justify">Continuamente se desarrollan nuevos radiofármacos diagnósticos y terapéuticos. Hoy en
+				día una parte importante
+				de la investigación en medicina nuclear consiste en el desarrollo de nuevos fármacos que se puedan
+				usar tanto para el diagnóstico como para el tratamiento, simplemente, sustituyendo el isótopo. Esto se
+				denomina "theragnosis" (terapia+diag&shy;nóstico) y es la base de algunos tratamientos actuales de gran
+				eficacia, por ejemplo, el uso del Lutecio-177-PSMA en el tratamiento de los tumores de próstata o del
+				Lutecio-177-DOTATOC en el de los tumores de origen neuroendocrino.</p>
+			</p>
+		</section>
+
+		<section id="Pag3" class="banner mn-theme">
+			<h1 class="mn-text-theme mn-text-center">¿Como lo hacemos?</h1>
+			<span class="mn-text-center">
+				<h2 class="mn-text-center">La Gammacámara</h2>
+				<img src="media/images/MN/PR/ge-infinia.jpg" alt="Gammacámara">
+			</span>
+			<div>
+				<p class="mn-text-center">Para obtener imágenes del paciente usamos el equipo de imagen que se ve encima y que
+					denominamos GAMMACÁMARA.</p>
+				<ul>
+					<p class="mn-text-center"> La gammacámara está formada por:</p>
+					<li>Dos "cabezales" a modo de "pantallas" que permiten adquirir dos imágenes simultáneamente y
+						que pueden girar y moverse para situarse en la posición deseada para obtener las imágenes.
+					</li>
+					<li>Un estativo -denominado gantry en lenguaje médico- al cual están fijados firmemente los
+						cabezas detectores pero que permite que estos giren libremente,</li>
+					<li>Una camilla de exploración que puede ascender, descender y desplazarse
+						horizontalmente de forma motorizada al situarse en el lugar a explorar de su anatomía. Cuando hacemos una
+						imagen de "cuerpo completo" la camilla se desplaza lentamente bajo los cabezales detectores desde la cabeza
+						a los pies.</li>
+					<li>Además, dispone de un sistema informático avanzado que transforma la información recibida en forma de
+						radiación emitida por usted en imágenes médicas del órgano o sistema que estemos
+						estudiando.</li>
+					<a href="#"><span>Para saber más...</span></a>
+				</ul>
+			</div>
+			<div>
+				<p class="mn-theme-border atencion mn-text-justify mn-monospace animate_appear">Sabemos que, en ocasiones, los
+					pacientes sienten cierta aprensión para situarse bajo los
+					equipos
+					de imagen médica, especialmente, los que sufren claustrofobia. En general, la gammacámara no
+					suele provocar tal aprensión pues es un equipo "abierto" y, salvo en ocasiones especiales, los
+					tiempos de imagen no suelen ser superiores a 10 minutos.</br></br>No obstante, si usted no desea hacerse
+					alguna imagen que le ocasiona especial aprensión no dude en decírselo al técnico quien procurará buscar una
+					solución alternativa o si fuera necesario y, tras consulta con el equipo médico, prescindir de las imágenes
+					que le causan tal estado.</br></br>Normalmente no es necesario recurrir a la relajación farmacológica y es
+					excepcional la utilización de procedimientos anestésicos para hacerse una gammagrafía.
+				</p>
+			</div>
+			<span class="mn-text-center">
+				<h2 class="mn-text-center">Los radiofármacos</h2>
+				<img src="media/images/MN/PR/radiotracer.jpeg" alt="">
+			</span>
+			<div>
+				<p>Para obtener imágenes de sus órganos o sistemas es necesario administrar un producto denominado
+					radiofármaco.</p>
+				<ul>
+					<p>Un "radio-fármaco", como la palabra indica, está formado por dos productos intimamente unidos, a saber:</p>
+					<li>Un "fármaco", que es la parte que, una vez administrado, se va a "fijar" al órgano o sistema en
+						estudio. Cumple todos los requisitos que se le exigen a un fármaco en cuanto a su producción,
+						preparación y cuidados en laboratorios especializados pero que carece, absolutamente, de
+						cualquier efecto físico que usted pueda sentir.</li>
+					<li>Un "isótopo radiactivo" que nos permite, al emitir radiación detectable por la gammacámara, obtener las
+						imágenes médicas.</li>
+					<a href="#"><span>Para saber más...</span></a>
+				</ul>
+			</div>
+			<div>
+				<p class="mn-text-justify">Los radiofármacos son exclusivamente de uso hospitalario, no pueden adquirirse en
+					farmacias y solo
+					pueden usarlo las personas especialmente adiestradas para ello y dentro de un servicio de medicina
+					nuclear.</p>
+				<p class="mn-text-justify">La administración de los radiofármacos se realiza, habitualmente, por vía intravenosa
+					-como un análisis de
+					sangre convencional- y, tal y como dijimos más arriba, no le causará ningún efecto.
+				</p>
+				<p class="mn-theme-border atencion animate_appear mn-text-justify mn-monospace">La radiación que se inyecta es
+					la mínima y necesaria para cada estudio en concreto y, aun
+					cuando,
+					usted va a recibir una pequeña dosis de radiación, ésta es mínima y, a la luz del saber científico
+					actual, no le provocará ningún efecto a corto o largo plazo.<br><br>Habitualmente, tras haber pasado algunas
+					horas -generalmente, las horas desde que se le inyecta hasta que abandona el servicio- la radiación emitida
+					hacia el exterior es casi despreciable y puede usted reanudar su vida normal sin miedo a hacerle daño a sus
+					seres queridos, animales de compañía y público en general.<br><br>En las ocasiones limitadas en las que usamos
+					isótopos de mayor energía (tratamientos con Iodo-131 y estudios con Galio-67 o Indio-111) le daremos
+					instrucciones precisas sobre las precauciones que deberá tomar con respecto a las personas que conviven con
+					usted o con el público en general.</p>
+			</div>
+		</section>
+
+		<section id="Pag4" class="banner mn-theme-alt">
+			<h1 class="mn-text-center">Nuestras pruebas</h1>
+
+			<div class="gallery">
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/heart_1.svg" style="fill:#000;" />
+					<div class="shadow-3">
+						<h1>Cardiología</h1>
+						<p>Permite valorar el estado del riego sanguíneo cardiaco y determinar en algunos casos la extensión y localización
+							de áreas de	infarto de miocardio.</p>
+						<a href="cardiologia.html"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/lung.svg" />
+					<div class="shadow-3">
+						<h1 >Neumología</h1>
+						<p>Permite valorar el riego sanguíneo pulmonar, lo que, tiene gran valor
+							en los casos de embolia pulmonar aguda y crónica. Puede valorar la reserva pulmonar
+							prequirúrgica, de interés, en procesos tumorales.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/kidney.svg" />
+					<div class="shadow-3">
+						<h1 >Nefro-Urología</h1>
+						<p>Ayuda a conocer la función renal diferencial -cuanto de la función
+							total corresponde a cada riñón-. En la hidronefrosis ayuda a determinar si es aconsejable su
+							corrección quirúrgica o no.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/bones.svg" />
+					<div class="shadow-3">
+						<h1>Trauma-Reuma</h1>
+						<p>Valoramos los problemas de huesos y articulaciones ya sean
+							de causa traumática, por envejecimiento o inflamatoria. De valor en el diagnóstico de los problemas de las
+							prótesis articulares.
+						</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/brain.svg" />
+					<div class="shadow-3">
+						<h1 >Neurología</h1>
+						<p>Dispone de pruebas de gran interés en el estudio de las demencias y en
+							la valoración de los temblores y la enfermedad de Parkinson. Puede ser de ayuda en el estudio
+							de la epilepsia.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/tiroides.svg" />
+					<div class="shadow-3">
+						<h1 >Endocrinología</h1>
+						<p>La gammagrafía tiroidea fue la primera prueba realizada en medicina
+							nuclear, aún hoy juega un papel clave en el diagnóstico de sus problemas.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/gastric.svg" />
+					<div class="shadow-3">
+						<h1 >Digestivo</h1>
+						<p>Realizamos algunas gammagrafías para el estudio de problemas digestivos. Se
+							caracterizan, en general, por no ser invasivas y por remedar de forma precisa los procesos fisiológicos
+							normales.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/therapy-solid.svg" />
+					<div class="shadow-3">
+						<h1 >Terapia</h1>
+						<p>La medicina nuclear fue pionera en el uso del Iodo radiactivo para el tratamiento
+							del hipertiroidismo. Ahora disponemos de otros tratamientos como la
+							terapia de la sinovitis articular con Ytrio-90.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<img class="shadow-2" src="media/images/sistemas/gear-solid.svg" />
+					<div class="shadow-3">
+						<h1 >Miscelánea</h1>
+						<p>Existen otras pruebas de medicina nuclear que se utilizan en el
+							diagnóstico de otros
+							múltiples procesos que puede consultar aqui.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="mn-theme-footer">
+			<div class="about flex flex-row flex-wrap">
+				<h1>Sobre nosotros</h1>
+				<p>Hemos creado este sitio WEB (<a href="#">Información para la Medicina Nuclear</a>) con el fin de dar
+					a conocer a nuestros pacientes, de una forma simple y detallada, como se realizan nuestras
+					exploraciones (<a href="">gammagrafías</a>), la preparación previa que pudieran necesitar
+					(habitualmente ninguna) y lo que puede esperarse de ellas. La información aqui ofrecida es el fruto
+					de amplia experiencia -más de 30 años- de labor profesional y dedicación plena a este campo.</p>
+				<p>SIGUENOS EN REDES¡</p>
+				<div class="redes flex flex-row flex-wrap flex-content-center">
+					<img src="media/images/redes/facebook.svg" alt="" />
+					<img src="media/images/redes/twitter.svg" alt="" />
+					<img src="media/images/redes/instagram-color.svg" alt="" />
+					<img src="media/images/redes/tiktok.svg" alt="" />
+					<img src="media/images/redes/youtube.svg" alt="" />
+				</div>
+			</div>
+
+			<div class="support">
+				<h1>Support</h1>
+				<ul>
+					<li><a href="">FAQ</a></li>
+					<li><a href="">Privacy Policy</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">Support</a></li>
+				</ul>
+			</div>
+
+			<div class="contact">
+				<h1>Contact Us</h1>
+				<ul>
+					<li><a style="font-family:fontcustom;font-size:1.2rem" href="tel:+34922472310">&#xf1d7;&#x2003;+34
+							922 47 23 10 (2685)</a></li>
+					<li><a style="font-family:fontcustom;font-size:1.2rem"
+							href="mailto:nuclearinfo@gmail.com">&#xf1e9;&#x2003;nuclearinfo@gmail.com</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+	</div> <!--container -->
+
+	<script>
+		// Constants
+		const menutoggle = document.querySelector('header .toggle');
+		const header = document.querySelector('header');
+		const lupa = document.querySelector('header .lupa');
+		const input = document.querySelector('header input');
+		const menuText = document.querySelector('header nav ul');
+
+		const language = document.querySelector('.language');
+		const idioma = document.querySelector('.language ul');
+		const flag = document.querySelector('.flag img');
+		const iconMovil = document.querySelector('.icon-movil');
+
+		const SP = document.querySelector(".scrollPosition");
+
+		// Test for movile device
+		const movile = navigator.userAgentData.mobile;
+
+		// Gestión de iconMovil
+		/*
+			Nos podemos encontrar ICONOS e IMAGE:
+				- LOS iconos tienen acciones (ej.: toggle, lupa, calendar,...)
+				- LAS imágenes solo son informativas (ej.: flag)
+		*/
+		iconMovil.addEventListener("click", () => {
+			// donde se pulsó ?
+			let tagName = event.target.tagName;
+
+			switch (tagName) {
+				case 'I':
+					let iconName = event.target.parentNode.classList[0];
+					switch (iconName) {
+						case "calendar":
+							console.log("Haré algo con el calendario...");
+							break;
+						case "toggle":
+							// debo controlar si el input (.search) está .active
+							if (input.classList.length > 1) {
+								input.classList.toggle('active');
+								lupa.classList.toggle('active');
+							}
+							header.classList.toggle('active');
+							break;
+						case "lupa":
+							// debo controlar si el menu está abierto...
+							if (header.classList.length > 0) {
+								header.classList.toggle('active');
+							}
+							input.classList.toggle('active');
+							lupa.classList.toggle('active');
+							break;
+						default:
+							break;
+					}
+				default:
+					break;
+			}
+		});
+
+		/* language events */
+		language.addEventListener("click", (evento) => {
+			// ojo puedeo haber hecho click en la <li> o en el<img>
+			if (evento.target.tagName == "IMG") {
+				bandera = evento.target.getAttribute("src");
+			} else {
+				bandera = evento.target.childNodes[0].getAttribute("src");
+			}
+			//flag.setAttribute("src","");
+			flag.setAttribute("src", bandera);
+			// ahora lo suyo sería cancelar el hover pero no se como??
+			// event.preventDefault(); /* no se si esto hace algo...*/
+		});
+
+		// changing menu color on page view
+		document.addEventListener('scroll', () => {
+
+			const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
+
+			const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
+			const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
+			const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+			const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
+			//
+			const menu_1 = document.querySelector('.menu ul li:first-child');
+
+			let scrollPosition = window.scrollY;
+
+			let vp = visualViewport.height;
+			// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
+			/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
+
+			if ((pag2Top <= 0 && pag3Top >= 0) ||
+				(pag4Top <= 0 && footerTop >= 0)) {
+				header.classList.remove('mn-theme-header');
+				header.classList.add('mn-theme-header-inverse');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-menu-1');
+				menu_1.classList.add('mn-theme-inverse-menu-1');
+			} else {
+				header.classList.remove('mn-theme-header-inverse');
+				header.classList.add('mn-theme-header');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-inverse-menu-1');
+				menu_1.classList.add('mn-theme-menu-1');
+			}
+
+		});
+
+		// preparándome para el PHP
+		function request() {
+			const cuerpo = document.querySelector(".cuerpo");
+			var xmlhttp = new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					cuerpo.innerHTML = this.responseText;
+					//cuerpo.textContent = this.responseText;
+				}
+			};
+			xmlhttp.open("GET", "gethint.php", true);
+			xmlhttp.send();
+		}
+
+		/* Deprecated */
+		/* 		function getDimensions () {
+					const pages = [
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+					]
+		
+					const dim = document.querySelectorAll(".banner");
+					dim.forEach ((element, indice) => {
+						let rec = element.getBoundingClientRect();
+						pages[indice].top = rec.top;
+						pages[indice].bottom = rec.bottom;
+					});
+		
+					const foo = document.querySelectorAll("footer").getBoundingClientRect();
+					pages[4].top = foo.top;
+					pages[4].bottom = foo.bottom;
+		
+					return pages;
+		
+				}
+			// get Visibility for Pages
+					const options = {
+					root: null,
+					threshold:  0.32,
+				};
+		
+		
+				const observer = new IntersectionObserver((entries) => {
+					// hay 4 opciones:
+					// movile landscape
+					// movile portrait
+					// desktop
+					entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								// se ve per tengo que averiguar si estoy bajando o subiendo
+								if (entry.boundingClientRect.top > 1) {
+									menuText.classList.remove('mn-theme-menu');
+									menuText.classList.add('mn-theme-menu-inverse');
+								}
+									console.log('Element is in viewport')
+							} else {
+								menuText.classList.remove('mn-theme-menu-inverse');
+								menuText.classList.add('mn-theme-menu');
+								console.log('Element is not in viewport')
+							}
+					})
+				}, options);
+				observer.observe(document.querySelector('#Pag2'))
+		
+		 */
+	</script>
+</body>
+
+</html>

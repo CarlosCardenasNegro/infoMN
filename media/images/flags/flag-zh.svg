@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512">
+  <g id="Capa_1">
+    <g id="Flag_of_the_People's_Republic_of_China">
+      <path d="M0,84 L512,84 L512,428 L0,428" fill="#EE1C25"/>
+      <path d="M85.333,118.4 L115.428,211.745 L36.639,154.055 L134.027,154.055 L55.239,211.745" fill="#FFFF00" id="s"/>
+      <path d="M177.345,102.572 L174.495,135.162 L157.793,107.108 L187.667,119.91 L156.032,127.249" fill="#FFFF00" id="s"/>
+      <path d="M217.05,140.824 L201.875,169.745 L197.284,137.358 L219.887,160.84 L187.905,155.232" fill="#FFFF00" id="s"/>
+      <path d="M220.832,198.502 L195.27,218.669 L204.188,187.211 L215.32,217.944 L188.39,199.675" fill="#FFFF00" id="s"/>
+      <path d="M176.688,222.706 L175.182,255.387 L157.34,228.055 L187.715,239.598 L156.409,248.253" fill="#FFFF00" id="s"/>
+    </g>
+  </g>
+</svg>

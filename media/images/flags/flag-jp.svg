@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512">
+  <g id="Capa_1">
+    <g id="Flag_of_Japan">
+      <path d="M-0,84 L512,84 L512,428 L-0,428 z" fill="#FFFFFF"/>
+      <path d="M358.4,256 C358.4,312.996 312.554,359.2 256,359.2 C199.446,359.2 153.6,312.996 153.6,256 C153.6,199.004 199.446,152.8 256,152.8 C312.554,152.8 358.4,199.004 358.4,256 z" fill="#BC002D"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+/* Cosito de subir.css */
+/* COSITO DE SUBIR */
+.subir {
+position:fixed;
+bottom: 30px;
+right: 10px;
+width: 90px;
+height:35px;
+border-radius: 5px;
+background: linear-gradient(blue, #0a0d76);
+opacity: 0;
+text-align: center;
+animation: appear 1s linear;
+animation-timeline: scroll(y);
+animation-range: entry 0% cover 100%;
+z-index: 1;
+}
+.subir a {
+color: white;
+text-decoration: none;
+font-size:1.1rem;
+font-family: sans-serif;
+line-height: 2rem;
+}
+.subir i {color:white;font-size: 1.3rem;}
+
