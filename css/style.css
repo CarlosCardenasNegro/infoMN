@@ -179,9 +179,9 @@ section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);
 /* Carousel */
 #Pag2 .img {
 	position: relative;
-	height: calc(clamp(128px, 18vw, 225px) + 420px);
+	height: calc(clamp(128px, 18vw, 225px) + 220px);
 	background: #000;
-	width: clamp(877px, 90%, 1300px);
+	width: clamp(877px, 90%, 1100px);
 	margin: 45px auto;
 	box-shadow: 0px 1px 15px 5px rgba(0,0,0,.5);
 	border-radius: 20px;
