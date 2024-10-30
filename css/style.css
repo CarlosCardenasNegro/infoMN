@@ -244,7 +244,7 @@ section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);
 }
 #Pag3 ul {
 	padding: 40px;
-	max-width: 70%;
+	/*max-width: 70%;*/
 	margin:30px auto;
 	border-radius: 20px;
 }
