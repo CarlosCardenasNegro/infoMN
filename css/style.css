@@ -261,6 +261,7 @@ section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);
 #Pag3 .atencion {
 	border: 6px solid;
 	padding:40px;
+	font-family: arial, sans-serif;
 	font-weight: 500;
 	border-radius: var(--p_small);
 	margin: var(--p_medium);

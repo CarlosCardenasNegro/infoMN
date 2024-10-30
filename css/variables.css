@@ -37,7 +37,7 @@
 	--size_M: clamp(1.1rem, 1.3vw, 1.3rem); 	/* .gallery card p */
 	--size_L: clamp(1.0rem, 6vw, 2rem); 			/* .gallery card h1 */
 	--size_B: clamp(2.5rem, 4.0vw, 4.0rem); 	/* logo font size */
-	--size_C: clamp(3.0rem, 11vw, 12rem); 		/* banner h1: se reduce a partir de < 1280px */
+	--size_C: clamp(3.0rem, 11vw, 9rem); 		/* banner h1: se reduce a partir de < 1280px */
 	--size_C1:clamp(3.2rem, 7vw, 9rem); 			/* banner h1 en Pag2 : se reduce a partir de < 1280px */
 	--size_P: clamp(1.2rem, 1.0vw, 1.2rem);			/* input .search */
 
