@@ -9,4 +9,4 @@ Nuclear Medicine Information Utility
 <h3>Documentación</h3>
 <p>Este documento describe su utilidad.</p>
 <h3>Autor</h3>
-<code>Carlos Cárdenas Negro</code>
+<code><a href="mailto:carloscardenasnegro@gmail.com">&#x1F4E7;Carlos Cárdenas Negro</a></code>
