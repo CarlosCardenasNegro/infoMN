@@ -536,7 +536,7 @@ footer ul li a {text-decoration: none; }
 
 	/* Pag3 */
 	#Pag3 h1 {padding: 0;}
-	#Pag3 div ul {max-width: 100%; padding:25px}
+	#Pag3 div ul {/*max-width: 100%;*/ padding:25px}
 	#Pag3 .atencion {padding: 10px; margin: 10px; font-size:1rem}
 
 	/* Pag4 GALLERY CARD */
