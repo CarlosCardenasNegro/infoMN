@@ -1,0 +1,719 @@
+<!--
+ * infoMN: Nuclear Medicine Information Utility(tm) (http://www.nuimsa.es)
+ * Copywright (c) San Miguel Software, Sl. (http://www.sanmiguelsoftware.com)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.TXT (https://www.tldrlegal.com/l/mit)
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright   Copywright (c) San Miguel Software (http://www.sanmiguelsoftware.com)
+ * @author      Juan Carlos Cárdenas Negro 
+ * @link        http://www.nuimsa.es
+ * @since       0.1.0
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT License
+ * @version     8.0
+ */
+-->
+<!doctype html>
+<html>
+
+<head>
+	<meta lang="es">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0" />
+	<meta name="title" content="InfoMN ® | Nuclear Medicine Information Utility">
+	<meta name="description"
+		content="InfoMN es una utilidad de información sobre la especialidad médica denominada Medicina Nuclear dirigida principalmente a los pacientes para su mejor conocimiento de nuestras exploraciones y lo que debe esperar al acudir a un Servicio de Medicina Nuclear.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fontcustom/fontcustom.css">
+	<link rel="stylesheet" href="css/subir.css">
+	<!-- <link rel="stylesheet" href="css/mibi.css"> -->
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/themes/blue.css">
+	<link rel="icon" type="imgage/svg+xml" href="media/favicon.png">
+	<title>InfoMN ® | Nuclear Medicine Information Utility</title>
+</head>
+
+<body>
+	<span class="subir"><a href="#">Subir&#x2003</a><i class="icon-arrow-small-up"></i></span>
+
+	<div class="container mn-theme-container">
+
+		<header class="mn-theme-header">
+			<!-- movil -->
+			<div class="icon-movil">
+				<div class="toggle">
+					<i class="icon-bars-solid"></i>
+					<i class="icon-close-solid"></i>
+				</div>
+				<div class="lupa">
+					<i class="icon-lupa-solid"></i>
+					<i class="icon-close-solid"></i>
+				</div>
+				<div class="flag">
+					<img src="media/images/flags/flag-es.svg" style="width: 25px; height: auto;">
+				</div>
+<!-- 				<div class="calendar">
+					<i class="icon-calendar-solid"></i>
+				</div>
+ -->			</div>
+
+			<a href="#" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
+
+			<!-- NOTA: CAMBIO A NUEVO MENU CLASS - 26/10/2024 12:11	-->
+			<nav class="menu">
+				<ul>
+					<li class="mn-theme-menu-1"><a href="index.html" title="Volver al inicio">Inicio</a></li>
+					<li><a href="" title="La Medicina nuclear...">Conócenos</a>
+						<ul>
+							<li><a href="#Pag2" title="Que hacemos">Lo que hacemos</a></li>
+							<li><a href="#Pag3" title="Como lo hacemos">Como lo hacemos</a></li>
+						</ul>
+					</li>
+					<li><a href="#Pag4" title="Pruebas diagnósticas">Pruebas</a></li>
+					<li><a href="" title="Usuarios...">Login</a></li>
+					<li class="language"><a href="" title="Seleccionar Idioma...">Idioma</a>
+						<ul>
+							<li><a><img src="media/images/flags/flag-de.svg" alt="" data="de" />Deutsch</a></li>
+							<li><a><img src="media/images/flags/flag-en.svg" alt="" data="en" />English</a></li>
+							<li><a><img src="media/images/flags/flag-es.svg" alt="" data="es" />Español</a></li>
+							<li><a><img src="media/images/flags/flag-fr.svg" alt="" data="fr" />Français</a></li>
+							<li><a><img src="media/images/flags/flag-it.svg" alt="" data="it" />Italiano</a></li>
+							<li><a><img src="media/images/flags/flag-jp.svg" alt="" data="ja" />日本語</a></li>
+							<li><a><img src="media/images/flags/flag-zh.svg" alt="" data="zh" />普通话</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="search">
+				<input type="text" id="buscar" title="Buscar en la página" placeholder="Buscar..."
+					onchange="alert(this.value);this.value=''" />
+			</div>
+
+		</header>
+
+		<section id="Pag1" class="banner mn-theme">
+			<h1 class="mn-text-center">Medicina Nuclear</h1>
+			<span>
+				<h2 class="mn-text-center">Aprovechando las energías que unen la naturaleza en favor de la salud de nuestros
+					pacientes</h2>
+				<div class="img flex flex-content-center"><img src="media/Medicina nuclear_4.webp" /></div>
+			</span>
+		</section>
+
+		<section id="Pag2" class="banner mn-theme-inverse">
+			<h1 class="mn-text-theme-2 mn-text-center">¿Que hacemos?</h1>
+			<h2 class="mn-text-theme-1 mn-text-left animate_entrada">La Medicina Nuclear</h2>
+			<p class="mn-text-justify">La medicina nuclear es una especialidad de diagnóstico por la imagen hermana del radiodiagnóstico. Al igual que éste usa la radiación para obtener imágenes de su organismo y así hacer un diagnóstico médico pero, a diferencia de éste, no usa equipos emisores de radiación para obtener una imagen sino productos radiactivos a modo de "radiotrazadores".</p>
+			<h2 class="mn-text-theme-1 mn-text-left animate_entrada">Múltiples opciones</h2>
+			<p class="mn-text-justify">Disponemos de procedimientos diagnósticos diversos que van dirigidos
+				a valorar el estado de
+				casi cada órgano o sistema de nuestro cuerpo. El objetivo de cada una de nuestras exploraciones es intentar
+				encontrar cual es el origen de sus dolencias.</p>
+			<h2 class="mn-text-right mn-italic animate_entrada">...también en terapia...</h2>
+			<p class="mn-text-justify">Contamos, asi mismo, con algunos procedimientos terapéuticos altamente especializados.
+				Uno de ellos, el
+				tratamiento de los problemas del tiroides, se practica desde mediados del siglo pasado con gran éxito y todavía
+				se considera uno de sus terapias más eficaces. </p>
+			<div class="img flex flex-content-center flex-items-center">
+				<div class="scene">
+					<div class="carousel">
+						<div class="carousel__cell" style="--i:0"><img src="media/images/MN/neurologia/JPEG/brain_pet.jpeg"
+								alt="amiloid image" /></div>
+						<div class="carousel__cell" style="--i:1"><img src="media/images/MN/traumareuma/JPEG/articular_spot.jpeg"
+								alt="Bone scan spot image" /></div>
+						<div class="carousel__cell" style="--i:2"><img src="media/images/MN/cardiologia/JPEG/cardiac.jpeg"
+								alt="cardiac processing image" /></div>
+						<div class="carousel__cell" style="--i:3"><img src="media/images/MN/oncologia/JPEG/centinela.jpeg"
+								alt="Centinel node image" /></div>
+						<div class="carousel__cell" style="--i:4"><img src="media/images/MN/neurologia/JPEG/ioflupano.jpeg"
+								alt="Ioflupane striatal image" /></div>
+						<div class="carousel__cell" style="--i:5"><img src="media/images/MN/nefrourologia/JPEG/renal.jpeg"
+								alt="Ioflupane striatal image" /></div>
+						<div class="carousel__cell" style="--i:6"><img src="media/images/MN/miscelanea/JPEG/linfo.jpeg"
+								alt="Linphography image" /></div>
+						<div class="carousel__cell" style="--i:7"><img src="media/images/MN/cardiologia/JPEG/mibi.jpeg"
+								alt="Miocardial image" /></div>
+						<div class="carousel__cell" style="--i:8"><img src="media/images/MN/oncologia/JPEG/pet.jpeg"
+								alt="Pet image" /> </div>
+						<div class="carousel__cell" style="--i:9"><img src="media/images/MN/oncologia/JPEG/sirt.jpeg"
+								alt="SIRT image" /></div>
+						<div class="carousel__cell" style="--i:10"><img src="media/images/MN/endocrinologia/JPEG/paratiroides.jpeg"
+								alt="Parathyroid image" /></div>
+						<div class="carousel__cell" style="--i:11"><img src="media/images/MN/traumareuma/JPEG/wb.jpeg"
+								alt="Bone scan image" /></div>
+						<div class="carousel__cell" style="--i:12"><img src="media/images/MN/nefrourologia/JPEG/renograma.jpeg"
+								alt="Renography processing" /></div>
+						<div class="carousel__cell" style="--i:13"><img src="media/images/MN/endocrinologia/JPEG/tiroidea.jpeg"
+								alt="Thyroid image" /></div>
+					</div>
+				</div>
+			</div>
+			<h2 class="animate_entrada">y...seguimos avanzando...</h2>
+			<p class="mn-text-justify">Continuamente se desarrollan nuevos radiofármacos diagnósticos y terapéuticos. Hoy en
+				día una parte importante
+				de la investigación en medicina nuclear consiste en el desarrollo de nuevos fármacos que se puedan
+				usar tanto para el diagnóstico como para el tratamiento, simplemente, sustituyendo el isótopo. Esto se
+				denomina "theragnosis" (terapia + diag&shy;nóstico) y es la base de algunos tratamientos actuales de gran
+				eficacia, por ejemplo, en los tumores de próstata podemos usar el Galio-68-PSMA en su diagnóstico y el Lutecio-177-PSMA en su tratamiento o del 18F-DOTATOC en el diagnóstico
+				y el Lutecio-177-DOTATOC en el tratamiento en el caso de los tumores de origen neuroendocrino.</p>
+			</p>
+		</section>
+
+		<section id="Pag3" class="banner mn-theme">
+			<h1 class="mn-text-theme mn-text-center">¿Como lo hacemos?</h1>
+			<span class="mn-text-center">
+				<h2 class="mn-text-center">La Gammacámara</h2>
+				<img src="media/images/MN/PR/ge-infinia.jpg" alt="Gammacámara">
+			</span>
+			<div>
+				<p class="mn-text-center">Para obtener imágenes del paciente usamos el equipo de imagen que se ve encima y que
+					denominamos GAMMACÁMARA.</p>
+				<ul>
+					<p class="mn-text-center"> La gammacámara está formada por:</p>
+					<li>Dos "cabezales" a modo de "pantallas" que permiten adquirir dos imágenes simultáneamente y
+						que pueden moverse para situarse en la posición deseada.
+					</li>
+					<li>Un estativo -denominado gantry en lenguaje médico- al cual están fijados firmemente los
+						cabezas detectores pero que permite que estos giren libremente a su alrededor cuando vamos a obtener un estudio tomográfico -es decir, un estudio que nos permite obtener imágenes tridimensionales de su anatomía-.</li>
+					<li>Una camilla de exploración que puede ascender, descender y desplazarse
+						horizontalmente de forma motorizada para situarse en el lugar a explorar de su cuerpo. Cuando hacemos una
+						imagen de "cuerpo completo" la camilla se desplaza lentamente bajo los cabezales detectores desde la cabeza
+						a los pies.</li>
+					<li>Además, dispone de un sistema informático avanzado que transforma la información recibida en forma de
+						radiación emitida por usted en imágenes médicas del órgano o sistema que estemos
+						estudiando.</li>
+
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512" style="cursor:pointer; filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4)); width:100%; margin:auto">
+							<g id="gantry">
+								<g>
+									<path d="M368.5,64.5 C371.574,64.5 384.5,77.692 384.5,80.5 L384.5,436.5 C384.5,439.308 375.574,464.5 372.5,464.5 L140.5,464.5 C137.426,464.5 128.5,439.308 128.5,436.5 L128.5,80.5 C128.5,77.692 141.426,64.5 144.5,64.5 L368.5,64.5 z M256.5,165.48 C202.928,165.48 159.5,208.057 159.5,260.578 C159.5,313.1 202.928,355.676 256.5,355.676 C310.072,355.676 353.5,313.1 353.5,260.578 C353.5,208.057 310.072,165.48 256.5,165.48 z" fill="#FFFFFF"/>
+									<path d="M368.5,64.5 C371.574,64.5 384.5,77.692 384.5,80.5 L384.5,436.5 C384.5,439.308 375.574,464.5 372.5,464.5 L140.5,464.5 C137.426,464.5 128.5,439.308 128.5,436.5 L128.5,80.5 C128.5,77.692 141.426,64.5 144.5,64.5 L368.5,64.5 z M256.5,165.48 C202.928,165.48 159.5,208.057 159.5,260.578 C159.5,313.1 202.928,355.676 256.5,355.676 C310.072,355.676 353.5,313.1 353.5,260.578 C353.5,208.057 310.072,165.48 256.5,165.48 z" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+								</g>
+							</g>
+							<g id="Cabezales">
+								<g>
+									<path d="M163.662,356.5 C164.887,352.79 165.942,346.953 169.534,344.379 L343.465,344.379 C347.101,347.353 348.168,352.395 349.338,356.5 L163.662,356.5 z" fill="#7686B3"/>
+									<path d="M163.662,356.5 C164.887,352.79 165.942,346.953 169.534,344.379 L343.465,344.379 C347.101,347.353 348.168,352.395 349.338,356.5 L163.662,356.5 z" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+								</g>
+								<g>
+									<path d="M169.534,440.5 C166.764,440.5 162.845,436.95 159.5,392.015 C159.771,379.869 160.292,367.481 163.662,355.652 L349.338,355.652 C352.517,367.537 353.344,379.826 353.5,392.015 C350.155,436.95 346.236,440.5 343.466,440.5 L169.534,440.5 z" fill="#FFFFFF"/>
+									<path d="M169.534,440.5 C166.764,440.5 162.845,436.95 159.5,392.015 C159.771,379.869 160.292,367.481 163.662,355.652 L349.338,355.652 C352.517,367.537 353.344,379.826 353.5,392.015 C350.155,436.95 346.236,440.5 343.466,440.5 L169.534,440.5 z" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+								</g>
+								<g>
+									<path d="M343.466,71.53 C346.236,71.53 350.155,75.08 353.5,120.015 C353.228,132.161 352.708,144.549 349.338,156.379 L163.662,156.379 C160.483,144.493 159.656,132.204 159.5,120.015 C162.845,75.08 166.764,71.53 169.534,71.53 L343.466,71.53 z" fill="#FFFFFF"/>
+									<path d="M343.466,71.53 C346.236,71.53 350.155,75.08 353.5,120.015 C353.228,132.161 352.708,144.549 349.338,156.379 L163.662,156.379 C160.483,144.493 159.656,132.204 159.5,120.015 C162.845,75.08 166.764,71.53 169.534,71.53 L343.466,71.53 z" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+								</g>
+								<g>
+									<path d="M349.338,156.379 C348.113,160.089 347.058,165.925 343.466,168.5 L169.535,168.5 C165.899,165.526 164.832,160.484 163.662,156.379 L349.338,156.379 z" fill="#7686B3"/>
+									<path d="M349.338,156.379 C348.113,160.089 347.058,165.925 343.466,168.5 L169.535,168.5 C165.899,165.526 164.832,160.484 163.662,156.379 L349.338,156.379 z" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+								</g>
+							</g>
+							<g id="base">
+								<g>
+									<path d="M196.5,404.5 L316.5,404.5 L316.5,468.5 L196.5,468.5 L196.5,404.5 z" fill="#FFFFFF"/>
+									<path d="M196.5,404.5 L316.5,404.5 L316.5,468.5 L196.5,468.5 L196.5,404.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+								</g>
+								<g>
+									<path d="M200.5,468.5 L212.5,468.5 L212.5,472.5 L200.5,472.5 L200.5,468.5 z" fill="#515151"/>
+									<path d="M200.5,468.5 L212.5,468.5 L212.5,472.5 L200.5,472.5 L200.5,468.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+								</g>
+								<g>
+									<path d="M300.5,468.5 L312.5,468.5 L312.5,472.5 L300.5,472.5 L300.5,468.5 z" fill="#515151"/>
+									<path d="M300.5,468.5 L312.5,468.5 L312.5,472.5 L300.5,472.5 L300.5,468.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+								</g>
+							</g>
+							<g id="camilla">
+								<g>
+									<g id="paciente"  transform-origin="256 322">
+										<g>
+											<path d="M202.332,291.944 C202.332,291.944 222.288,281.793 256.5,281.793 C290.712,281.793 310.668,291.944 310.668,291.944 C321.69,291.944 330.625,299.897 330.625,309.707 L330.625,309.707 C330.625,319.518 321.69,327.471 310.668,327.471 C310.668,327.471 290.712,335.06 256.5,331.266 C222.288,332.546 202.332,327.471 202.332,327.471 C191.31,327.471 182.375,319.518 182.375,309.707 L182.375,309.707 C182.375,299.897 191.31,291.944 202.332,291.944 z" fill="#FFEE91"/>
+											<path d="M202.332,291.944 C202.332,291.944 222.288,281.793 256.5,281.793 C290.712,281.793 310.668,291.944 310.668,291.944 C321.69,291.944 330.625,299.897 330.625,309.707 L330.625,309.707 C330.625,319.518 321.69,327.471 310.668,327.471 C310.668,327.471 290.712,335.06 256.5,331.266 C222.288,332.546 202.332,327.471 202.332,327.471 C191.31,327.471 182.375,319.518 182.375,309.707 L182.375,309.707 C182.375,299.897 191.31,291.944 202.332,291.944 z" fill-opacity="0" stroke="#827100" stroke-width="2"/>
+										</g>
+										<g>
+											<path d="M256.5,332.328 C243.416,332.328 232.81,319.831 232.81,304.414 C232.81,288.998 243.416,276.5 256.5,276.5 C269.584,276.5 280.19,288.998 280.19,304.414 C280.19,319.831 269.584,332.328 256.5,332.328 z" fill="#FFEE91"/>
+											<path d="M256.5,332.328 C243.416,332.328 232.81,319.831 232.81,304.414 C232.81,288.998 243.416,276.5 256.5,276.5 C269.584,276.5 280.19,288.998 280.19,304.414 C280.19,319.831 269.584,332.328 256.5,332.328 z" fill-opacity="0" stroke="#827100" stroke-width="2"/>
+										</g>
+									</g>
+									<g>
+										<path d="M179.274,340.5 L333.726,340.5 C337.467,340.5 340.5,343.058 340.5,346.214 L340.5,366.786 C340.5,369.942 337.467,372.5 333.726,372.5 L179.274,372.5 C175.533,372.5 172.5,369.942 172.5,366.786 L172.5,346.214 C172.5,343.058 175.533,340.5 179.274,340.5 z" fill="#FFFFFF"/>
+										<path d="M179.274,340.5 L333.726,340.5 C337.467,340.5 340.5,343.058 340.5,346.214 L340.5,366.786 C340.5,369.942 337.467,372.5 333.726,372.5 L179.274,372.5 C175.533,372.5 172.5,369.942 172.5,366.786 L172.5,346.214 C172.5,343.058 175.533,340.5 179.274,340.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+									</g>
+									<g>
+										<path d="M180.375,328.5 C180.375,328.5 209.25,332.5 256.5,332.5 C303.75,332.5 332.625,328.5 332.625,328.5 C336.974,328.5 340.5,331.186 340.5,334.5 L340.5,334.5 C340.5,337.814 336.974,340.5 332.625,340.5 L180.375,340.5 C176.026,340.5 172.5,337.814 172.5,334.5 L172.5,334.5 C172.5,331.186 176.026,328.5 180.375,328.5 z" fill="#90D3FF"/>
+										<path d="M180.375,328.5 C180.375,328.5 209.25,332.5 256.5,332.5 C303.75,332.5 332.625,328.5 332.625,328.5 C336.974,328.5 340.5,331.186 340.5,334.5 L340.5,334.5 C340.5,337.814 336.974,340.5 332.625,340.5 L180.375,340.5 C176.026,340.5 172.5,337.814 172.5,334.5 L172.5,334.5 C172.5,331.186 176.026,328.5 180.375,328.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+									</g>
+									<g>
+										<path d="M182.31,380.5 L330.69,380.5 C331.69,380.5 332.5,381.022 332.5,381.667 L332.5,463.333 C332.5,463.978 331.69,464.5 330.69,464.5 L182.31,464.5 C181.31,464.5 180.5,463.978 180.5,463.333 L180.5,381.667 C180.5,381.022 181.31,380.5 182.31,380.5 z" fill="#FFFFFF"/>
+										<path d="M182.31,380.5 L330.69,380.5 C331.69,380.5 332.5,381.022 332.5,381.667 L332.5,463.333 C332.5,463.978 331.69,464.5 330.69,464.5 L182.31,464.5 C181.31,464.5 180.5,463.978 180.5,463.333 L180.5,381.667 C180.5,381.022 181.31,380.5 182.31,380.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+									</g>
+									<g>
+										<path d="M176.438,372.5 L336.562,372.5 C338.737,372.5 340.5,373.395 340.5,374.5 L340.5,378.5 C340.5,379.605 338.737,380.5 336.562,380.5 L176.438,380.5 C174.263,380.5 172.5,379.605 172.5,378.5 L172.5,374.5 C172.5,373.395 174.263,372.5 176.438,372.5 z" fill="#7686B3"/>
+										<path d="M176.438,372.5 L336.562,372.5 C338.737,372.5 340.5,373.395 340.5,374.5 L340.5,378.5 C340.5,379.605 338.737,380.5 336.562,380.5 L176.438,380.5 C174.263,380.5 172.5,379.605 172.5,378.5 L172.5,374.5 C172.5,373.395 174.263,372.5 176.438,372.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+									</g>
+								</g>
+							</g>
+							<!-- <g>
+								<circle cx="256" cy="256" r="100" fill="#b2d4e5" opacity=".8"/>
+								<animate id="start" dur="2.0s" attributeName="r" values="120; 120" fill="freeze" begin="2s" repeatCount="indefinite"/>
+							</g> 
+							<g id="start">
+								<text transform="matrix(1, 0, 0, 1, 256, 412)">
+									<tspan x="-62.242" y="2" font-family="ArialMT" font-size="16" fill="#ff0000">Click para animar</tspan>
+								</text>
+							</g>
+					 -->
+							 <animateTransform
+								xlink:href="#camilla"
+								attributeName="transform"
+								attributeType="XML"
+								type="translate"
+								from="0 auto"
+								to="0 -60"
+								dur="2s"
+								begin="click"
+								fill="freeze"
+								id="cam-anim"
+								/>
+							<animateTransform
+								xlink:href="#paciente"
+								attributeName="transform"
+								attributeType="XML"
+								type="scale"
+								from="1"
+								to=".8"
+								dur="1s"
+								begin="cam-anim.begin + 2s"
+								fill="freeze"
+								id="pat-anim"  
+								/>
+								 <animateTransform
+								xlink:href="#Cabezales"
+								attributeName="transform"
+								attributeType="XML"
+								type="rotate"
+								from="0 256 256"
+								to="180 256 256"
+								dur="4s"
+								begin="cam-anim.begin + 3s"
+								id="cab-anim"
+								/>
+								
+						</svg>
+						<a href="#"><span>Para saber más...</span></a>
+				</ul>
+			</div>
+			<div>
+				<p class="mn-theme-border atencion mn-text-justify animate_appear">Sabemos que, en ocasiones, los
+					pacientes sienten cierta aprensión para situarse bajo los
+					equipos
+					de imagen médica, especialmente, los que sufren claustrofobia. En general, la gammacámara no
+					suele provocar tal aprensión pues es un equipo "abierto" y, salvo en ocasiones especiales, los
+					tiempos de imagen no suelen ser superiores a 10 minutos.</br></br>No obstante, si usted no desea hacerse
+					alguna imagen que le ocasiona especial aprensión no dude en decírselo al técnico quien procurará buscar una
+					solución alternativa o si fuera necesario y, tras consulta con el equipo médico, prescindir de las imágenes
+					que le causan tal estado.</br></br>Normalmente no es necesario recurrir a la relajación farmacológica y es
+					excepcional la utilización de procedimientos anestésicos para hacerse una gammagrafía.
+				</p>
+			</div>
+			<span class="mn-text-center">
+				<h2 class="mn-text-center">Los radiofármacos</h2>
+				<img src="media/images/MN/PR/radiotracer.jpeg" alt="">
+			</span>
+			<div>
+				<p>Para obtener imágenes de sus órganos o sistemas es necesario administrar un producto denominado
+					radiofármaco.</p>
+				<ul>
+					<p>Un "radio-fármaco", como la palabra indica, está formado por dos productos intimamente unidos, a saber:</p>
+					<li>Un "fármaco", que es la parte que, una vez administrado, se va a "fijar" al órgano o sistema en
+						estudio. Cumple todos los requisitos que se le exigen a un fármaco en cuanto a su producción,
+						preparación y cuidados en laboratorios especializados pero que carece, absolutamente, de
+						cualquier efecto físico que usted pueda sentir.</li>
+					<li>Un "isótopo radiactivo" que nos permite, al emitir radiación detectable por la gammacámara, obtener las
+						imágenes médicas.</li>
+					<a href="#"><span>Para saber más...</span></a>
+				</ul>
+			</div>
+			<div>
+				<p class="mn-text-justify">Los radiofármacos son exclusivamente de uso hospitalario, no pueden adquirirse en
+					farmacias y solo
+					pueden usarlo las personas especialmente adiestradas para ello y dentro de un servicio de medicina
+					nuclear.</p>
+				<p class="mn-text-justify">La administración de los radiofármacos se realiza, habitualmente, por vía intravenosa
+					-como un análisis de
+					sangre convencional- y, tal y como dijimos más arriba, no le causará ningún efecto.
+				</p>
+				<p class="mn-theme-border atencion animate_appear mn-text-justify">La radiación que se inyecta es
+					la mínima y necesaria para cada estudio en concreto y, aun
+					cuando,
+					usted va a recibir una pequeña dosis de radiación, ésta es mínima y, a la luz del saber científico
+					actual, no le provocará ningún efecto a corto o largo plazo.<br><br>Habitualmente, tras haber pasado algunas
+					horas -generalmente, las horas desde que se le inyecta hasta que abandona el servicio- la radiación emitida
+					hacia el exterior es casi despreciable y puede usted reanudar su vida normal sin miedo a hacerle daño a sus
+					seres queridos, animales de compañía y público en general.<br><br>En las ocasiones limitadas en las que usamos
+					isótopos de mayor energía (tratamientos con Iodo-131 y estudios con Galio-67 o Indio-111) le daremos
+					instrucciones precisas sobre las precauciones que deberá tomar con respecto a las personas que conviven con
+					usted o con el público en general.</p>
+			</div>
+		</section>
+
+		<section id="Pag4" class="banner mn-theme-alt">
+			<h1 class="mn-text-center">Nuestras pruebas</h1>
+
+			<div class="gallery">
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">					
+					<div><img class="" src="media/images/sistemas/heart_1.svg"  /></div>
+					<div class="shadow-3">
+						<h1>Cardiología</h1>
+						<p>Permite valorar el estado del riego sanguíneo cardiaco y determinar en algunos casos la extensión y localización
+							de áreas de	infarto de miocardio.</p>
+						<a href="javascript:request('cardiologia.html')"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/lung.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Neumología</h1>
+						<p>Permite valorar el riego sanguíneo pulmonar, lo que, tiene gran valor
+							en los casos de embolia pulmonar aguda y crónica. Puede valorar la reserva pulmonar
+							prequirúrgica, de interés, en procesos tumorales.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/kidney.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Nefro-Urología</h1>
+						<p>Ayuda a conocer la función renal diferencial -cuanto de la función
+							total corresponde a cada riñón-. En la hidronefrosis ayuda a determinar si es aconsejable su
+							corrección quirúrgica o no.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/bones.svg" /></div>
+					<div class="shadow-3">
+						<h1>Trauma-Reuma</h1>
+						<p>Valoramos los problemas de huesos y articulaciones ya sean
+							de causa traumática, por envejecimiento o inflamatoria. De valor en el diagnóstico de los problemas de las
+							prótesis articulares.
+						</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/brain.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Neurología</h1>
+						<p>Dispone de pruebas de gran interés en el estudio de las demencias y en
+							la valoración de los temblores y la enfermedad de Parkinson. Puede ser de ayuda en el estudio
+							de la epilepsia.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/tiroides.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Endocrinología</h1>
+						<p>La gammagrafía tiroidea fue la primera prueba realizada en medicina
+							nuclear, aún hoy juega un papel clave en el diagnóstico de sus problemas.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/gastric.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Digestivo</h1>
+						<p>Realizamos algunas gammagrafías para el estudio de problemas digestivos. Se
+							caracterizan, en general, por no ser invasivas y por remedar de forma precisa los procesos fisiológicos
+							normales.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/therapy-solid.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Terapia</h1>
+						<p>La medicina nuclear fue pionera en el uso del Iodo radiactivo para el tratamiento
+							del hipertiroidismo. Ahora disponemos de otros tratamientos como la
+							terapia de la sinovitis articular con Ytrio-90.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+
+				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+					<div><img class="" src="media/images/sistemas/gear-solid.svg" /></div>
+					<div class="shadow-3">
+						<h1 >Miscelánea</h1>
+						<p>Existen otras pruebas de medicina nuclear que se utilizan en el
+							diagnóstico de otros
+							múltiples procesos que puede consultar aqui.</p>
+						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="mn-theme-footer">
+			<div class="about flex flex-row flex-wrap">
+				<h1>Sobre nosotros</h1>
+				<p>Hemos creado este sitio WEB (<a href="#">Información para la Medicina Nuclear</a>) con el fin de dar
+					a conocer a nuestros pacientes, de una forma simple y detallada, como se realizan nuestras
+					exploraciones (<a href="">gammagrafías</a>), la preparación previa que pudieran necesitar
+					(habitualmente ninguna) y lo que puede esperarse de ellas. La información aqui ofrecida es el fruto
+					de amplia experiencia -más de 30 años- de labor profesional y dedicación plena a este campo.</p>
+				<p>SIGUENOS EN REDES¡</p>
+				<div class="redes flex flex-row flex-wrap flex-content-center">
+					<img src="media/images/redes/facebook.svg" alt="" />
+					<img src="media/images/redes/twitter.svg" alt="" />
+					<img src="media/images/redes/instagram-color.svg" alt="" />
+					<img src="media/images/redes/tiktok.svg" alt="" />
+					<img src="media/images/redes/youtube.svg" alt="" />
+				</div>
+			</div>
+
+			<div class="support">
+				<h1>Support</h1>
+				<ul>
+					<li><a href="">FAQ</a></li>
+					<li><a href="">Privacy Policy</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">Support</a></li>
+				</ul>
+			</div>
+
+			<div class="contact">
+				<h1>Contact Us</h1>
+				<ul>
+					<li><a style="font-family:fontcustom;font-size:1.2rem" href="tel:+34922673354">&#xf1d7;&#x2003;+34
+							922 67 33 54 (0087)</a></li>
+					<li><a style="font-family:fontcustom;font-size:1.2rem"
+							href="mailto:nuclearinfo@gmail.com">&#x1F4E7;nuclearinfo@gmail.com</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+	</div> <!--container -->
+
+	<script>
+		// Constants
+		const menutoggle = document.querySelector('header .toggle');
+		const header = document.querySelector('header');
+		const lupa = document.querySelector('header .lupa');
+		const input = document.querySelector('.search');
+		const menuText = document.querySelector('header nav ul');
+
+		const language = document.querySelector('.language');
+		const idioma = document.querySelector('.language ul');
+		const flag = document.querySelector('.flag img');
+		const iconMovil = document.querySelector('.icon-movil');
+
+		const SP = document.querySelector(".scrollPosition");		
+
+		const pag4 = document.querySelector("#Pag4");
+
+
+		// /* Solo para cuando el menu esta activo si pulso fuera se va ...*/
+		// window.addEventListener('click', (e) => {
+		// 	console.log(e.target);
+		// 	if (header.classList.contains('active')) {
+		// 		if(!(document.querySelector('.menu').contains(e.target))) {
+		// 			console.log('Puse fuera');
+		// 			//header.classList.toggle('active');
+		// 		}
+		// 	}			
+		// });
+
+
+		// pruebita.addEventListener('click', () => {
+		// 	let tagN = event.target.tagName;
+		// });
+
+		// Test for movile device
+		//const movile = navigator.userAgentData.mobile;
+
+		// Gestión de iconMovil
+		/*
+			Nos podemos encontrar ICONOS e IMAGE:
+				- LOS iconos tienen acciones (ej.: toggle, lupa, calendar,...)
+				- LAS imágenes solo son informativas (ej.: flag)
+		*/
+		iconMovil.addEventListener("click", () => {
+			// donde se pulsó ?
+			let tagName = event.target.tagName;
+
+			switch (tagName) {
+				case 'I':
+					let iconName = event.target.parentNode.classList[0];
+					switch (iconName) {
+						case "calendar":
+							console.log("Haré algo con el calendario...");
+							break;
+						case "toggle":
+							// debo controlar si el input (.search) está .active
+							if (input.classList.contains('active')) {
+								input.classList.toggle('active');
+								lupa.classList.toggle('active');
+							}
+							header.classList.toggle('active');
+							menutoggle.classList.toggle('active');
+							break;
+						case "lupa":
+							// debo controlar si el menu está abierto...
+							if (header.classList.contains('active')) {
+								header.classList.toggle('active');
+								menutoggle.classList.toggle('active');
+							}
+							input.classList.toggle('active');
+							lupa.classList.toggle('active');
+							break;
+						default:
+							break;
+					}
+				default:
+					break;
+			}
+		});
+
+		/* language events */
+		language.addEventListener("click", (evento) => {
+			// ojo puedeo haber hecho click en la <li> o en el<img>
+			if (evento.target.tagName == "IMG") {
+				bandera = evento.target.getAttribute("src");
+			} else {
+				bandera = evento.target.childNodes[0].getAttribute("src");
+			}
+			//flag.setAttribute("src","");
+			flag.setAttribute("src", bandera);
+			// ahora lo suyo sería cancelar el hover pero no se como??
+			// event.preventDefault(); /* no se si esto hace algo...*/
+		});
+
+		// changing menu color on page view
+		document.addEventListener('scroll', () => {
+
+			const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
+
+			const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
+			const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
+			const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+			const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
+			//
+			const menu_1 = document.querySelector('.menu ul li:first-child');
+	
+			let scrollPosition = window.scrollY;
+
+			let vp = visualViewport.height;
+			// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
+			/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
+
+			if ((pag2Top <= 0 && pag3Top >= 0) ||
+				(pag4Top <= 0 && footerTop >= 0)) {
+				header.classList.remove('mn-theme-header');
+				header.classList.add('mn-theme-header-inverse');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-menu-1');
+				menu_1.classList.add('mn-theme-inverse-menu-1');
+			} else {
+				header.classList.remove('mn-theme-header-inverse');
+				header.classList.add('mn-theme-header');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-inverse-menu-1');
+				menu_1.classList.add('mn-theme-menu-1');
+			}
+
+		});
+
+		// eventos de persiana
+		const miSpan = document.querySelectorAll('.persiana .lama span');
+		// ad eventListener to all span elements
+		miSpan.forEach(div => div.addEventListener('click', response));
+
+		function response() {
+			// event.currentTarget.classList.toggle('active');
+			event.currentTarget.parentNode.classList.toggle('active');
+		}
+
+		// preparándome para el PHP
+		function request(pagina) {
+
+			var xmlhttp = new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					pag4.innerHTML = this.responseText;
+					//cuerpo.textContent = this.responseText;
+				}
+			};
+			xmlhttp.open("GET", pagina, true);
+			xmlhttp.send();
+		}
+
+		/* Deprecated */
+		/* 		function getDimensions () {
+					const pages = [
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+						{top: 0, bottom: 0},
+					]
+		
+					const dim = document.querySelectorAll(".banner");
+					dim.forEach ((element, indice) => {
+						let rec = element.getBoundingClientRect();
+						pages[indice].top = rec.top;
+						pages[indice].bottom = rec.bottom;
+					});
+		
+					const foo = document.querySelectorAll("footer").getBoundingClientRect();
+					pages[4].top = foo.top;
+					pages[4].bottom = foo.bottom;
+		
+					return pages;
+		
+				}
+			// get Visibility for Pages
+					const options = {
+					root: null,
+					threshold:  0.32,
+				};
+		
+		
+				const observer = new IntersectionObserver((entries) => {
+					// hay 4 opciones:
+					// movile landscape
+					// movile portrait
+					// desktop
+					entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								// se ve per tengo que averiguar si estoy bajando o subiendo
+								if (entry.boundingClientRect.top > 1) {
+									menuText.classList.remove('mn-theme-menu');
+									menuText.classList.add('mn-theme-menu-inverse');
+								}
+									console.log('Element is in viewport')
+							} else {
+								menuText.classList.remove('mn-theme-menu-inverse');
+								menuText.classList.add('mn-theme-menu');
+								console.log('Element is not in viewport')
+							}
+					})
+				}, options);
+				observer.observe(document.querySelector('#Pag2'))
+		
+		 */
+	</script>
+</body>
+
+</html>

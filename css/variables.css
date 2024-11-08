@@ -1,0 +1,73 @@
+/* variables.css */
+/* CSS Variables */
+:root {
+	/* spacing fixed: for padding, margin, width, height, etc,... */
+	--p_no: 		0px;
+	--p_mini: 	5px;
+	--p_small: 	10px;
+	--p_medium: 15px;
+	--p_large: 	20px;
+	--p_xlarge: 25px;
+	--p_xxlarge:30px;
+	--p_big: 		40px;
+	--p_xbig:   60px;
+	--p_xxbig:  80px;
+	--p_xxxbig: 100px;
+	--p_monster:120px;
+	--p_xmonster:150px;
+	--p_xxmonster:200px;
+	--p_responsive_1: clamp(8px,.8vw,1.5rem); /* menu*/
+	
+	/* Fonts fixed sizes */
+	--f_normal: 1rem;
+	--f_semi: 	1.2rem;
+	--f_medium: 1.5rem;
+	--f_large: 	2rem;
+	--f_xlarge: 2.5rem;
+	--f_big:    3rem;
+	
+	/* Fonts responsive sizes */
+	--size_A: clamp(1.0rem, 1.7vw, 1.7rem);		/* menu text (header nav ul li a span) */
+	--size_G: clamp(1.0rem, 7.0vw, 4.5rem);		/* banner h2 line_height */
+	--size_F: clamp(1.1rem, 2.6vw, 1.6rem);		/* banner Pag2 h2 */
+	--size_D: clamp(1.8rem, 3.6vw, 3.0rem);		/* banner h2 */
+	--size_H: clamp(1.8rem, 3.0vw, 3.0rem);		/* #Pag4 h2 */
+	--size_J: clamp(1.2rem, 1.7vw, 2.0rem);		/* #Pag4 p */
+	--size_K: clamp(1.1rem, 1.4vw, 1.5rem); 	/* #Pag4 div ul li */
+	--size_M: clamp(1.1rem, 1.3vw, 1.3rem); 	/* .gallery card p */
+	--size_L: clamp(1.0rem, 6vw, 2rem); 			/* .gallery card h1 */
+	--size_B: clamp(2.5rem, 4.0vw, 4.0rem); 	/* logo font size */
+	--size_C: clamp(3.0rem, 11vw, 9rem); 		/* banner h1: se reduce a partir de < 1280px */
+	--size_C1:clamp(3.2rem, 7vw, 9rem); 			/* banner h1 en Pag2 : se reduce a partir de < 1280px */
+	--size_P: clamp(1.2rem, 1.0vw, 1.2rem);			/* input .search */
+
+	/* Other responsive sizes in pixels */
+	--size_E: clamp(300px, 80%, 720px); 	/* #Pag1 img img */
+	--size_I: clamp(300px, 80%, 720px);		/* #Pag4 img */
+	--size_N: clamp(60px, 6.0vw, 90px);		/* Header height se reduce a partir de 1500px 90/0,06 = 1500 */
+	--size_O: clamp(150px, 20vw, 360px); /* input width */
+
+	/* Font families*/
+	--header-a: Lucida, sans-serif;
+	--header_input: Lucida, sans-serif;
+	--banner_h1_family: 'Helvetica Neue', sans-serif;
+	--banner_h2_family: 'Poppins', sans-serif;
+	--gallery_p_family: 'Arial narrow', sans-serif;
+	--gallery_card_a_family: Arial, sans-serif;
+	
+	/* Carousel special */
+	/* valores a cambiar */
+	--widthFrame: clamp(128px, 18vw, 225px);
+	--numFrames: 14;
+	--perspectiva: 1600px;
+	/* tipo de giro: horizontal:0deg / vertical:90deg */
+	--giro: 0deg;
+	/* valores calculados */
+	--halfFrame: calc(var(--widthFrame) / 2);
+	--halfGrados: calc((360deg / var(--numFrames)) / 2);
+	--radio: calc(var(--halfFrame) / (tan(var(--halfGrados))));
+	/* tiempo de giro */
+	--carousel_time: 35s;
+
+	
+}

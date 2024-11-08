@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512">
+  <g id="Capa_1">
+    <g id="Flag_of_Italy">
+      <path d="M0,84 L170.667,84 L170.667,437 L0,437 z" fill="#009246"/>
+      <path d="M170.667,84 L341.333,84 L341.333,437 L170.667,437 z" fill="#FFFFFF"/>
+      <path d="M341.333,84 L512,84 L512,437 L341.333,437 z" fill="#CE2B37"/>
+    </g>
+  </g>
+</svg>

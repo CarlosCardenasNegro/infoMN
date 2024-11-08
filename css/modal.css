@@ -1,0 +1,47 @@
+/* Contiene las clases para  las ventanas u objetos modales */
+/* Ver: /Users/Developper/Sites/_bolas/Pruebas parciales/modal/modal.html  */
+/* Por ahora no uso namespaces.... */
+/* @namespace mn-modal url(); */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 0%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility: hidden;
+  z-index: 3;
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: rgb(255, 136, 0);
+    &:hover {text-shadow: 2px 2px 4px rgba(0,0,0,.2);}
+  }
+}
+.modal-content {
+  position: relative;
+  width: clamp(50%, 70%, 80%);
+  /* height: 40%; */
+  padding: 20px;
+  background: yellow;
+  border: 1px solid #999;
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:center;	
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px 2px #3333332b;
+  overflow: auto;
+}
+/* Este sería un ejemplo aplicable a un <p> */
+.modal-content p {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-align: justify;
+}

@@ -1,0 +1,45 @@
+<style>
+	#Pag4 {height: unset;}
+	.gallery {align-items: flex-start;}
+	.gallery .card div:first-child {
+		display: block;
+		background: initial;
+	}
+	.gallery .card h1 {
+		line-height: 1.5rem;
+		padding: 5px !important;
+	}
+	.gallery .card img {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+
+	@media screen and (orientation:portrait) and (width <= 930px) {
+		.gallery .card img {filter: none; border-radius: 5px 5px 0px 0px;}
+
+	}
+	@media screen and (orientation:landscape) and (height < 450px) {
+		.gallery .card div h1 {font-size: 1.6rem !important;}
+		.gallery .card img {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+	}
+</style>
+<h1 class="mn-text-center">Cardiología nuclear</h1>
+<div class="gallery">
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/cardiologia/JPEG/perfusion.jpeg" /></div>
+		<div>
+			<h1>Perfusión miocárdica</h1>
+			<p>Es la exploración idónea para valorar el riego sanguineo del corazón
+				-perfusión coronaria-, de gran importancia en el diagnóstico de la enfermedad coronaria
+				-angina de pecho, infartos,...-.</p>
+			<a href="javascript:request('mibi.html')"><span>Información detallada...</span></a>
+		</div>
+	</div>
+
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/cardiologia/JPEG/amiloidosis.jpeg" /></div>
+		<div>
+			<h1>Amiloidosis cardiaca</h1>
+			<p>En pacientes con síntomas de fallo cardiaco como falta de aire,
+				hinchazón de extremidades, etc, en los que no se demuestra origen coronario podemos confirmar la acumulación indeseada de una proteína anómala -amiloide- en el corazón.</p>
+			<a href="#"><span>Información detallada...</span></a>
+		</div>
+	</div>
+</div>

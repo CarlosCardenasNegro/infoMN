@@ -1,0 +1,13 @@
+.banner .h2 {font-size: clamp(1rem, 3vw, 2.5rem)}
+.bump {animation: latido linear .5s infinite;}
+.banner .img {width: clamp(256px, 50vw, 512px);}
+
+@keyframes latido {	from {transform:scale(.95);} to {transform:(1.1);}}
+
+@media screen and (orientation:landscape) and (max-height:500px ) {
+	.banner .h2 {font-size:clamp(1rem, 2vw, 2rem); padding-right: 0px; text-align:left}
+	.banner .img {width: 256px;}
+}
+@media screen and (orientation:portrait) and (max-width:600px){
+	.banner .h2 {font-size:1.2rem;}
+}

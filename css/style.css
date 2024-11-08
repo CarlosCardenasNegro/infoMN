@@ -1,0 +1,618 @@
+/* V 8.0 / 20/10/2024 */
+/* Versión responsive en modo portrait completada en 13/09/2024 */
+/* Objetivos:
+- 1. Ajustar la hoja de estilo de colores bajo el tema mn-theme
+- 2. Estudiar el modo de establecer modos: "normal" y "oscuro" (clear and dark)
+- 3. Emepezar a preparar el desembarco en PHP,
+*/
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); */
+
+/* basic and general options */
+* {padding:0; margin:0; box-sizing:border-box; text-decoration:none; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;}
+/* *, *:before, *:after {box-sizing:inherit} */
+html, body {scroll-behavior:smooth; font-family: arial, sans-serif;/* font-family:"Poppins",sans-serif; */ }
+/* body {line-height:1.5; overflow-x:hidden;} */
+
+/* SCROLL BARS */
+body::-webkit-scrollbar {width: var(--p_small);}
+body::-webkit-scrollbar-track {background: var(--scrollbar_track_col);}
+body::-webkit-scrollbar-thumb {background: var(--scrollbar_thumb_col);}
+body::-webkit-scrollbar-button {background: var(--scrollbar_button_col);height: var(--p_small);}
+body::-webkit-scrollbar-button:hover {background: var(--scrollbar_button_col_hover);}
+
+/* Basic Text styles */
+/*
+h1 {font-size:36px}
+h2 {font-size:30px}
+h3 {font-size:24px}
+h4 {font-size:20px}
+h5 {font-size:18px}
+h6 {font-size:16px}
+*/
+h1,h2,h3,h4,h5,h6{margin:10px 0; word-break: break-word;}
+
+/* mn Text styles */
+.mn-serif 			{font-family:serif}
+.mn-sans-serif	{font-family:sans-serif}
+.mn-cursive 		{font-family:cursive}
+.mn-italic 			{font-style: italic !important;}
+.mn-monospace 	{font-family:monospace}
+
+.mn-wide				{letter-spacing:4px}
+
+/* mn Text position */
+.mn-text-right 	{text-align: right !important;}
+.mn-text-left 	{text-align: left !important;}
+.mn-text-center	{text-align: center !important;}
+.mn-text-justify{text-align: justify !important;}
+
+p {hyphens: auto; word-break: auto-phrase; font-family: 'Helvetica', sans-serif;}	
+
+/* GENERAL CONTAINER */
+.container {/*max-width: 1500px;*/margin: auto;}
+
+/* HEADER */
+header {
+	/* header */
+	--header-height: clamp(60px, 6.0vw, 90px);
+	--header-width: 100%;
+	
+	position: sticky;
+	top: 0px;
+	width: var(--header-width);
+	height: var(--header-height);
+	margin: auto;
+	z-index: 1;
+
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+	
+	/* ver REFERENCIA: 67 */
+	&::before {
+	  content: '';
+	  position: absolute;
+	  top: 0; right: 0; bottom: 0; left: 0;
+	  width: var(--header-width);
+	  height: var(--header-size);
+	  margin: auto;
+	  z-index: -1;
+	  backdrop-filter: blur(20px);
+	  -webkit-backdrop-filter: blur(20px);
+	 }
+}
+
+/* Logo */
+.logo {padding: 0 15px; i{font-size: calc(var(--header-height) - 10px)}}
+
+/* NAV (menu) */
+/* icons for movil */
+.icon-movil {
+  --num_iconos: 4;
+  --gap: 25px;
+  --width: calc((var(--num_iconos) * 26px) + ((var(--num_iconos) - 1) * var(--gap)));
+
+  position: absolute;
+  right: 5px;
+  width: 100px;
+  
+  display:flex;
+  flex-wrap:nowrap;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  align-items:center;
+  
+  visibility:hidden;
+  i {color: #fff;font-size: 1.6rem;}
+}
+
+.menu {
+  /* variables */
+  --menu-1-width: 	  295px; /* Nota: este valor depende del texto del menu... debería automatizarlo...*/
+
+	/* nav .menu */		
+  position: relative;
+	a {text-decoration:none; font-family: var(--header-a); }
+
+  ul {position: relative;}
+  ul li {position: relative; display: inline-block; padding: var(--size_A);}
+  ul li a {font-size: var(--size_A); display: flex}
+	ul li a img {margin: 0 20px}
+  
+	/* nivel 1*/
+  ul li ul {position: absolute; left: 0; top: 90%; width: var(--menu-1-width); display: none;}
+  ul li:hover > ul {display: block;}
+
+	/* submenus*/
+  ul li ul li {position: relative; display: block;}
+  ul li ul li:hover {border-radius: initial;}
+
+	/* arrows down and right */
+  ul a:not(:only-child)::after {content:'\2002\25bc'; font-size: 1rem; line-height: 2.5rem;}
+  ul ul a:not(:only-child)::after {content:'\2002\25b6';} /* No usado en este contexto */
+
+	/* caso especial Idioma */
+	.language {cursor: pointer;}
+  /* icons flag size */
+  img {width: 35px;height: 28px; }
+}
+
+/* input */
+.search input {
+	font-family: inherit;
+	font-size: var(--size_P);
+	line-height: 1.5rem;
+	padding: 5px;
+	width: clamp(150px, 20vw, 360px);
+	margin: 0 20px;
+	border: 2px solid rgba(0, 0, 0, .1);
+	border-radius: 20px;
+}
+
+/* SECTION's */
+section {width:100%; display: grid; grid-template-columns: 1fr;}
+section p {max-width: 1100px; margin:auto;}
+section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);}
+
+/* BANNER's */
+.banner p {max-width: 1100px;	margin:auto;}
+
+/* Estilos propios relativos a cada Pag */
+/*************/
+/*   Pag 1   */
+/*************/
+#Pag1 h1 {font-weight: 200; font-family: var(--banner_h1_family); font-size: var(--size_C);}
+#Pag1 h2 {font-weight: 300; font-size: var(--size_D); animation: grow 1s linear; padding: 20px 0; width: 90%;	margin: auto; max-width: 1500px;}
+#Pag1 div {	animation: test 2s;	padding-bottom: 60px;}
+#Pag1 div img {width: var(--size_E);border-radius: 20px;}
+
+/*************/
+/*   Pag 2   */
+/*************/
+#Pag2 h1 {font-weight: 500; font-family: auto; font-size: var(--size_C);}
+#Pag2 h2 {font-weight: 300; font-size: var(--size_D); padding: 0; max-width: 1000px; margin-left:auto; width: 90%; margin: auto;}
+#Pag2 p {font-size:var(--size_F);padding: 0 50px;/* font-weight: 100; */}
+#Pag2 p:last-child {margin-bottom:var(--p_big);}
+
+/* Carousel */
+#Pag2 .img {
+	position: relative;
+	height: calc(clamp(128px, 18vw, 225px) + 220px);
+	background: #000;
+	width: clamp(877px, 90%, 1100px);
+	margin: 45px auto;
+	box-shadow: 0px 1px 15px 5px rgba(0,0,0,.5);
+	border-radius: 20px;
+}
+.scene {
+	width: calc(var(--widthFrame));
+	height: calc(var(--widthFrame));
+	perspective: var(--perspectiva);
+	transform-style: preserve-3d;
+	transform: rotateZ(var(--giro));
+}
+.carousel {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform: translateZ(-var(--radio));
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	animation: carousel var(--carousel_time) linear infinite;
+}
+.carousel__cell {
+	position: absolute;
+	width: var(--widthFrame);
+	height: var(--widthFrame);
+	left: var(--marg);
+	top: var(--marg);
+	transform: rotateY(calc(360deg / var(--numFrames) * var(--i))) translateZ(var(--radio));
+}
+.carousel__cell img {
+	width: 100%;
+	height: 100%;
+	transform: rotate(calc(var(--giro) * -1));
+}
+
+/*************/
+/*   Pag 3   */
+/*************/
+#Pag3 h1 {color: #59b9cd; font-weight: 200; font-family: var(--banner_h1_family); font-size: var(--size_C);}
+#Pag3 h2 {font-size: var(--size_D); font-weight: 300;	padding: 20px 0;	width: 90%;	margin: auto;color: #ccc;}
+#Pag3 a {position: relative;top:10px; color:#fff; padding: 20px; border-radius: 10px;display:block; width: 300px; margin: auto;	text-align: center;}
+#Pag3 a:hover {	background: #3ceaf012;}
+
+#Pag3 img {
+	width: var(--size_I)/*clamp(400px, 60%, 800px)*/;
+	margin: auto;
+	padding: var(--p_small);
+	border-radius: 20px;
+	animation: grow 2s ease-in-out;animation-timeline: view();animation-range: entry 0% cover 25%;
+}
+#Pag3 div {padding: 0 clamp(30px,6vw,150px);
+	font-family: helvetica, sans-serif;
+	font-weight: 100;
+	max-width: 1400px;
+	margin: auto;
+}
+#Pag3 p {
+	font-size: var(--size_J)/*clamp(.9rem, 1.5vw, 2rem)*/;
+	font-weight: 100;
+	padding-bottom: var(--p_mini);
+}
+#Pag3 ul {
+	padding: 40px;
+	/*max-width: 70%;*/
+	margin:30px auto;
+	border-radius: 20px;
+}
+#Pag3 ul li {
+	font-size: var(--size_K)/*clamp(.8rem, 1.4vw, 1.5rem)*/;
+	font-weight: 100;
+	padding: var(--p_mini);
+	text-align: left;
+	line-height: 2rem;
+	animation: appear ease-in-out;
+	animation-timeline: view();animation-range: entry 0% cover 25%;
+}
+#Pag3 ul p {padding-bottom: 20px;}
+#Pag3 .atencion {
+	border: 6px solid;
+	padding:40px;
+	font-family: arial, sans-serif;
+	font-weight: 500;
+	border-radius: var(--p_small);
+	margin: var(--p_medium);
+}
+
+/*************/
+/*   Pag 4   */
+/*************/
+#Pag4 {padding-bottom: 100px;}
+#Pag4 h1 {font-weight: 400; padding: inherit; font-family: auto; font-size: var(--size_C);}
+
+.gallery {
+	display:grid;
+	grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+	justify-items:center;
+	align-items:center;
+	gap: 20px;
+	padding: 0 20px;
+	scroll-snap-type: x mandatory;
+}
+.gallery .card {
+	display: flex;
+	width: 600px;
+	height: 320px;
+	border-radius: 5px;
+	/* padding: 10px; */
+	gap: 15px;
+	scroll-snap-align: center;
+}
+.gallery .card img {
+	width: 50%;
+	border-radius: 5px 0px 0px 5px;
+}
+.gallery .card div {
+	width: 50%;
+	height: 95%;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+}
+.gallery .card div:first-child {
+  display: block;
+  height: 100%;
+  background: linear-gradient(#a9bcff, #a3ceb3);
+  border-radius: 5px 0px 0px 5px;
+}
+.gallery .card img {
+  width: -webkit-fill-available;
+	filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4));
+}
+/* nota: las card no van a cambiar de tamaño asi que todo ira fijo...¡¡ */
+.gallery .card h1 {
+	font-family: "Poppins", sans-serif !important;
+	font-size: var(--size_L) !important;
+	font-weight: 600 !important;
+	border-bottom: 1px solid lightgrey;
+	text-align: center;
+	/* letter-spacing: 2px; */
+	overflow: hidden;
+	margin: 0;
+}
+.gallery .card p {
+	height: 60%;
+	font-size: var(--size_M);
+	font-family: var(--gallery_p_family)/*'Arial narrow'*/;
+	padding: 5px 10px;
+	margin: initial;
+}
+.gallery .card a {
+	height: 20%;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-family: var(--gallery_card_a_family)/*arial, sans-serif*/;	
+	line-height: 2.8rem;
+	width: 80%;
+	margin: auto;
+}
+.gallery .card a span {
+	display: inline-block;
+	width: 80%;
+	border: 1px solid;
+	border-radius: 25px;
+	/* box-shadow: 0px 2px 3px #ddd; */
+	transition: .4s;
+	text-align: center;
+	width: 100%;
+}
+
+/* FOOTER */
+footer {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:start;
+	padding: 20px;
+	gap: 20px;
+	width: fit-content;
+	a {text-decoration: none;}
+}
+footer .about {width:55%; gap:20px;}
+footer .about p {text-align:justify;}
+footer .support {width:20%;}
+footer .contact {width:20%;}
+
+footer h1 {font-size:2rem;padding: 10px;text-align:center;}
+footer p {font-size: clamp(1rem, 1vw, 1.3rem);line-height: 1.8rem;padding: 0px 15px 0px 15px;}
+footer p:nth-child(3) {font-family:"Arial black", sans-serif;font-size: 1.2rem;padding: 0px 20px;}
+footer .redes {width: 100%;margin: auto;gap:20px;}
+footer img {width: 40px;height: 40px;}
+footer ul {position: relative;left:10px;list-style: none;}
+footer ul li a {text-decoration: none; }
+
+/* GENERIC CLASSES */
+.flex {display: flex;}
+.flex-row {flex-direction: row;}
+.flex-column {flex-direction: column;}
+.flex-wrap {flex-wrap: wrap;}
+.flex-content-space-around {justify-content: space-around;}
+.flex-content-space-between {justify-content: space-between;}
+.flex-content-center {justify-content: center;}
+.flex-items-start {align-items: start;}
+.flex-items-center {align-items: center;}
+
+/* ANIMATION CLASSES */
+.animate_appear {	animation: appear linear;animation-timeline: view();animation-range: entry 0% cover 35%;}
+.animate_entrada  {	animation: entrada 5s linear; animation-timeline: view(); animation-range: entry 0% cover 55%; }
+
+/***************/
+/*  KEYFRAMES  */
+/***************/
+@keyframes carousel {from {transform: rotatey(360deg);} to {transform: rotatey(0deg);}}
+@keyframes appear {from {opacity: 0;scale: 0.5;} to {opacity: 1;scale: 1;}}
+@keyframes grow {from {opacity: .4;transform: scale(.5);}	to {opacity: 1;transform: scale(1);}}
+@keyframes entrada  {from {margin-left:90%;} to {margin-left:20%}}
+@keyframes test {	from {transform: scale(.4);}	to {transform: scale(1);}}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+/***********************************************************/
+@media screen and (orientation:landscape) and (height < 450px)
+/***********************************************************/
+{
+  /* Cuando menu activo */
+	header.active::before {background: linear-gradient(#03437a, #061d41) !important}
+  header.active .menu {height: 100vh;visibility: visible;opacity: 1;}
+	.toggle.active i:first-child{display:none !important;}
+	.toggle.active i:last-child{display:initial !important;}
+
+
+	.icon-movil {
+	  visibility: visible;
+	  .toggle i:first-child{display:initial;}
+	  .toggle i:last-child{display:none;}
+	  .lupa i:first-child{display:block;}
+	  .lupa i:last-child{display:none;}
+	  .flag {display:initial;}
+	}
+	
+	.menu  {
+	  position: absolute;
+	  top: 60px;
+	  left: 0;
+	  width: 100%;
+    background: rgba(0,30,80,1);
+    /* backdrop-filter: blur(20px); */
+    /* -webkit-backdrop-filter: blur(20px);	 */
+	  
+	  /* for animation display */
+	  height:0px;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: .3s ease-in-out;
+	  
+	  ul {padding: 0 20px;}
+	  ul li {width: 100%; }
+	  ul li:hover {background-color: inherit; border-radius: 0px;}
+	  ul li a {font-size: 1.6rem; font-weight: 300;}
+	  ul a:not(:only-child)::after {content:'\2003\25b6'; color:var(--arrow-right);}
+	  ul li ul {position: fixed;top: 60px;left: 0;width: 100%;background: #fff !important;height:100%; padding: 20px 40px;z-index: 1;}
+	  ul li:hover .language_toggle {display:initial;}
+	  ul li ul li {text-align: left; border: none; padding: 5px; z-index: 1;}
+	  ul li ul li a {color:#000 !important; margin-left: 10px; img {margin: 0 20px}}
+	}
+	
+	.search {display:none;}
+	.search input {
+		position: relative;
+		width: -webkit-fill-available;
+		margin-top: 20px;
+	}
+
+  /* Cuando activo */
+  .search.active {
+		display:initial; 
+		position: absolute; 
+		top: 60px;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,30,80,1);
+	}
+	header:has(.search.active)::before {background: linear-gradient(#03437a, #061d41) !important}
+	.lupa.active i:first-child{display:none;}	
+  .lupa.active i:last-child{display:initial;}
+
+
+	/* Pag 1 */
+	#Pag1 h1 {padding: 0; margin: 0;}
+	#Pag1 span {display:flex;margin:0 20px;gap:40px;}
+	#Pag1 div {margin: 0;}
+	
+	/* Pag 2 */
+	#Pag2 h2 {animation:none;}
+	#Pag2 p {padding: 10px 50px;}
+	#Pag2 .img {overflow: hidden; margin:15px auto;height:250px;width: 80%;}
+	:root {
+		--widthFrame: 128px;
+		--perspectiva: 600px;
+	}
+
+	/* Pag 3 info */
+	#Pag3 span {display:flex;gap:40px;margin:100px;background: azure;border-radius: 20px;}
+	#Pag3 h2 {color:#0071e3 !important}
+	#Pag3 img {max-width: 45%;}
+	#Pag3 div {max-width: 90%; padding: inherit;}
+	#Pag3 a span {display: inherit;color:#fff;background: inherit; margin: auto;}
+	
+	footer {flex-direction:column; border-radius: unset;}
+	footer .about {width:100%;}
+	footer .support {width:100%;}
+	footer .contact {width:100%;}
+	footer p {font-size:1rem;}
+	footer h1 {text-align:left;}
+	footer ul li {text-align:left;}
+}
+
+/***********************************************************/
+@media screen and (orientation:portrait) and (width <= 930px) 
+/***********************************************************/
+{	
+  /* Cuando menu activo */
+	header.active::before {background: linear-gradient(#03437a, #061d41) !important}
+  header.active .menu {height: 100vh; visibility: visible; opacity: 1;}
+	.toggle.active i:first-child{display:none !important;}
+	.toggle.active i:last-child{display:initial !important;}
+
+ .icon-movil {
+    visibility: visible;
+    .toggle i:first-child{display:initial;}
+    .toggle i:last-child{display:none;}
+    .lupa i:first-child{display:block;}
+    .lupa i:last-child{display:none;}
+    .flag {display:initial;}
+  }    
+  
+  .menu  {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,30,80,1);
+    /* backdrop-filter: blur(20px); */
+    /* -webkit-backdrop-filter: blur(20px);	 */
+
+    /* for animation display */
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    
+    ul {padding: 100px 20px;}
+    ul li {width: 100%;}
+    ul li:hover {background-color: inherit; border-radius: 0px;}
+    ul li a {font-size: 1.8rem; font-weight: 300;}
+    ul a:not(:only-child)::after {content:'\2003\25b6'; color:var(--arrow-right);}
+    ul li ul {position: fixed; left: 0; top:60px;width: 100%; background: #fff !important; height: 100%; z-index: 1;}
+    ul li ul li {text-align: left; border: none; a{color:black !important}}
+    /* ul li:hover .language_toggle {display:initial;} */
+  }
+
+  .search {display:none;}
+	.search input {
+		position: relative;
+		width: -webkit-fill-available;
+		margin-top: 20px;
+	}
+
+  /* Cuando activo */
+  .search.active {
+		display:initial; 
+		position: absolute; 
+		top: 60px;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,30,80,1);
+	}
+	header:has(.search.active)::before {background: linear-gradient(#03437a, #061d41) !important}
+
+	.lupa.active i:first-child{display:none;}	
+  .lupa.active i:last-child{display:initial;}
+
+
+	/* Pag 1 */
+
+	/* PAG 2  */
+	#Pag2 h2 {animation:none;}
+	#Pag2 p {padding: 0 50px;}
+	#Pag2 .img {overflow:hidden;margin:20px auto; width:90%;height:400px;}
+	/* for carousel */
+	:root {
+		--giro: 90deg;
+		--widthFrame: 180px;
+		--perspectiva: 900px;
+		--carousel_time: 55s;
+	}
+
+	/* Pag3 */
+	#Pag3 h1 {padding: 0;}
+	#Pag3 div ul {/*max-width: 100%;*/ padding:25px}
+	#Pag3 .atencion {padding: 10px; margin: 10px; font-size:1rem}
+
+	/* Pag4 GALLERY CARD */
+	.gallery {grid-template-columns: 1fr !important;}
+	.gallery .card {flex-direction: column;width: 320px;height: 600px;}
+	.gallery .card div:first-child  {width: auto; border-radius: 0px;}
+	.gallery .card img{	width: 100%; height:auto; border-radius: 5px 5px 0px 0px;}
+	.gallery .card div {width: 100%;}
+	.gallery .card div h1 {padding: 0; height: 18%;}
+	.gallery .card div p {height: 60%; overflow: hidden;}
+
+	footer {flex-direction:column;border-radius: unset;}
+	footer .about {width:100%;}
+	footer .support {width:100%;}
+	footer .contact {width:100%;}
+	footer p {font-size:1rem;}
+	footer h1 {text-align:left;}
+	footer ul li {text-align:left;}
+}
+
+/* caso especial iPad mini and Air */
+@media screen and (orientation:portrait) and (1024px <= height <= 1180px) {
+	#Pag2 .img {height:350px;width: 95%;}
+
+	/* Pag4 GALLERY CARD */
+	.gallery {grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)) !important;	}
+	.gallery .card {flex-direction:initial; width: 600px;height: 320px;}
+	.gallery .card img{	width: 50%; height:auto;}
+	.gallery .card div {width: 50%;height:100%}
+	.gallery .card div h1 {padding: 0; height: 18%;}
+	.gallery .card div p {height: 63%; overflow: hidden;}
+	
+	:root {
+		--giro: 0deg;	
+	}
+}

@@ -1,0 +1,99 @@
+
+.persiana {
+	display:flex;
+	flex-direction: column;
+	justify-content:start;
+	width: 90%;
+	height:auto;
+	margin: auto;
+}
+.persiana .lama {
+	width: 100%;
+	height: clamp(1.8rem, 20vh, 3.5rem);
+	border-bottom: 1px solid #444;
+	overflow: hidden;
+	color:#aaa;
+}
+.persiana .lama i.icon-arrow-small-down::before {color:#db4352; font-size: clamp(1rem, 3vw, 2rem); transition:.3s}
+.persiana .lama i {font-size: clamp(1.2rem, 5vw, 2.5rem);transition:.3s;}
+.persiana .lama span {
+	font-size: clamp(1.2rem, 4.5vw, 2.3rem); 
+	padding-bottom: 2rem; 
+	color:#aaa;
+	cursor: pointer;
+}
+            
+/* con hover */
+/*
+.persiana .lama:hover {height:40%;overflow: scroll;}
+.persiana .lama:hover i.icon-arrow-small-down {display:none;}
+.persiana .lama:hover i.icon-arrow-small-up {display:inline-block;}
+*/
+/* con JAVA */
+.persiana .lama.active {height:auto;/* overflow: scroll; */}
+.persiana .lama.active i.icon-arrow-small-down::before {transition:.3s; transform: rotate(180deg); color:#5e87d9;}
+.persiana .lama.active span {color:#db4352;}
+/*.persiana .lama.active .contenido {padding: 0px 0px 20px 10px;}*/
+
+.contenido {
+	padding:0px 0px 20px 10px; /* T R B L */
+	font-family:sans-serif;
+}
+.contenido h3 {
+	font-size: 2rem;
+	font-weight: 500;
+	/*padding: 0px 0px 50px 0px;*/
+	color:#ccc;
+}
+.contenido h3::before {
+	content ='';
+	position:absolute;
+	height:200px;
+	width:250px;
+	border-bottom: 3px solid red;
+	background:red;
+}
+.contenido h4 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	padding: 0px 0px 15px 0px;
+	color:#5e87d9;	
+}
+
+.contenido p a {
+	font-size: 1.25rem;
+	font-weight: 200;
+	line-height:1.7rem;
+	letter-spacing: 2px;
+	color:#eee;
+	padding:0px 0px 20px 0px;
+}
+.contenido p a {color:violet;}
+
+.contenido ol, ul {
+	color:#eee;
+	/* padding: 0 20px; */
+}
+.contenido li {
+	color:#eee;
+	font-size: 1.25rem;
+	font-weight: 200;
+	line-height:1.7rem;
+	letter-spacing: 2px;
+	padding: 5px 20px;
+}
+.contenido li a {
+	color:violet;
+}
+
+
+@media screen and (orientation:landscape) and (max-height:500px ) {
+	.banner h1 {line-height:3.6rem;}	
+	.persiana .lama span {font-size: 1.3rem !important;}
+	.persiana .lama i {font-size: 1.3rem !important;}
+}
+@media screen and (orientation:portrait) and (max-width:600px){
+	.banner h2 {font-size:1.2rem;}
+	.persiana {width: 90%;}
+	.persiana .lama span {padding-bottom:1rem;}
+}
