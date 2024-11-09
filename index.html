@@ -34,32 +34,33 @@
 	<title>InfoMN ® | Nuclear Medicine Information Utility</title>
 </head>
 
-<body>
+<body class="mn-theme-body">
+
 	<span class="subir"><a href="#">Subir&#x2003</a><i class="icon-arrow-small-up"></i></span>
-
-	<div class="container mn-theme-container">
-
-		<header class="mn-theme-header">
-			<!-- movil -->
-			<div class="icon-movil">
-				<div class="toggle">
-					<i class="icon-bars-solid"></i>
-					<i class="icon-close-solid"></i>
-				</div>
-				<div class="lupa">
-					<i class="icon-lupa-solid"></i>
-					<i class="icon-close-solid"></i>
-				</div>
-				<div class="flag">
-					<img src="media/images/flags/flag-es.svg" style="width: 25px; height: auto;">
-				</div>
-<!-- 				<div class="calendar">
+	
+	<header class="mn-theme-header">
+		<!-- movil -->
+		<div class="icon-movil">
+			<div class="toggle">
+				<i class="icon-bars-solid"></i>
+				<i class="icon-close-solid"></i>
+			</div>
+			<div class="lupa">
+				<i class="icon-lupa-solid"></i>
+				<i class="icon-close-solid"></i>
+			</div>
+			<div class="flag">
+				<img src="media/images/flags/flag-es.svg" style="width: 25px; height: auto;">
+			</div>
+			<!--
+				<div class="calendar">
 					<i class="icon-calendar-solid"></i>
 				</div>
- -->			</div>
-
-			<a href="#" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
-
+				-->			
+		</div>
+			
+		<a href="#" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
+			
 			<!-- NOTA: CAMBIO A NUEVO MENU CLASS - 26/10/2024 12:11	-->
 			<nav class="menu">
 				<ul>
@@ -85,20 +86,22 @@
 					</li>
 				</ul>
 			</nav>
-
+			
 			<div class="search">
 				<input type="text" id="buscar" title="Buscar en la página" placeholder="Buscar..."
-					onchange="alert(this.value);this.value=''" />
+				onchange="alert(this.value);this.value=''" />
 			</div>
-
+			
 		</header>
+		
+		<div class="container mn-theme-container">
 
 		<section id="Pag1" class="banner mn-theme">
 			<h1 class="mn-text-center">Medicina Nuclear</h1>
 			<span>
-				<h2 class="mn-text-center">Aprovechando las energías que unen la naturaleza en favor de la salud de nuestros
+				<h2 class="mn-text-center animation_grow">Aprovechando las energías que unen la naturaleza en favor de la salud de nuestros
 					pacientes</h2>
-				<div class="img flex flex-content-center"><img src="media/Medicina nuclear_4.webp" /></div>
+				<div class="img flex flex-content-center animation_scale"><img src="media/Medicina nuclear_4.webp" /></div>
 			</span>
 		</section>
 
@@ -116,7 +119,7 @@
 				Uno de ellos, el
 				tratamiento de los problemas del tiroides, se practica desde mediados del siglo pasado con gran éxito y todavía
 				se considera uno de sus terapias más eficaces. </p>
-			<div class="img flex flex-content-center flex-items-center">
+			<div class="carousel_background flex flex-content-center flex-items-center">
 				<div class="scene">
 					<div class="carousel">
 						<div class="carousel__cell" style="--i:0"><img src="media/images/MN/neurologia/JPEG/brain_pet.jpeg"
@@ -165,7 +168,7 @@
 			<h1 class="mn-text-theme mn-text-center">¿Como lo hacemos?</h1>
 			<span class="mn-text-center">
 				<h2 class="mn-text-center">La Gammacámara</h2>
-				<img src="media/images/MN/PR/ge-infinia.jpg" alt="Gammacámara">
+				<img class="animation_grow_2" src="media/images/MN/PR/ge-infinia.jpg" alt="Gammacámara">
 			</span>
 			<div>
 				<p class="mn-text-center">Para obtener imágenes del paciente usamos el equipo de imagen que se ve encima y que
@@ -185,7 +188,7 @@
 						radiación emitida por usted en imágenes médicas del órgano o sistema que estemos
 						estudiando.</li>
 
-						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512" style="cursor:pointer; filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4)); width:100%; margin:auto">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="512" height="512" viewBox="0, 0, 512, 512" style="cursor:pointer; filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4)); width:100%; margin:auto∑">
 							<g id="gantry">
 								<g>
 									<path d="M368.5,64.5 C371.574,64.5 384.5,77.692 384.5,80.5 L384.5,436.5 C384.5,439.308 375.574,464.5 372.5,464.5 L140.5,464.5 C137.426,464.5 128.5,439.308 128.5,436.5 L128.5,80.5 C128.5,77.692 141.426,64.5 144.5,64.5 L368.5,64.5 z M256.5,165.48 C202.928,165.48 159.5,208.057 159.5,260.578 C159.5,313.1 202.928,355.676 256.5,355.676 C310.072,355.676 353.5,313.1 353.5,260.578 C353.5,208.057 310.072,165.48 256.5,165.48 z" fill="#FFFFFF"/>
@@ -319,7 +322,7 @@
 			</div>
 			<span class="mn-text-center">
 				<h2 class="mn-text-center">Los radiofármacos</h2>
-				<img src="media/images/MN/PR/radiotracer.jpeg" alt="">
+				<img class="animation_grow_2" src="media/images/MN/PR/radiotracer.jpeg" alt="">
 			</span>
 			<div>
 				<p>Para obtener imágenes de sus órganos o sistemas es necesario administrar un producto denominado
@@ -339,11 +342,11 @@
 				<p class="mn-text-justify">Los radiofármacos son exclusivamente de uso hospitalario, no pueden adquirirse en
 					farmacias y solo
 					pueden usarlo las personas especialmente adiestradas para ello y dentro de un servicio de medicina
-					nuclear.</p>
+					nuclear.</p><br/><br/>
 				<p class="mn-text-justify">La administración de los radiofármacos se realiza, habitualmente, por vía intravenosa
 					-como un análisis de
 					sangre convencional- y, tal y como dijimos más arriba, no le causará ningún efecto.
-				</p>
+				</p><br/>
 				<p class="mn-theme-border atencion animate_appear mn-text-justify">La radiación que se inyecta es
 					la mínima y necesaria para cada estudio en concreto y, aun
 					cuando,
@@ -360,11 +363,12 @@
 
 		<section id="Pag4" class="banner mn-theme-alt">
 			<h1 class="mn-text-center">Nuestras pruebas</h1>
+			<h2 class="mn-text-center">Aqui encontrará más aplia información sobre las pruebas de las que dispone nuestra especialidad.</h2>
 
 			<div class="gallery">
 
 				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">					
-					<div><img class="" src="media/images/sistemas/heart_1.svg"  /></div>
+					<div><img class="" src="media/images/sistemas/heart.svg"  /></div>
 					<div class="shadow-3">
 						<h1>Cardiología</h1>
 						<p>Permite valorar el estado del riego sanguíneo cardiaco y determinar en algunos casos la extensión y localización

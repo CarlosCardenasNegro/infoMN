@@ -1,18 +1,12 @@
-/* V 8.0 / 20/10/2024 */
-/* Versión responsive en modo portrait completada en 13/09/2024 */
+/* V 10.0 / 09/11/2024 */
+/* Versión responsive completada en 13/09/2024 */
 /* Objetivos:
-- 1. Ajustar la hoja de estilo de colores bajo el tema mn-theme
-- 2. Estudiar el modo de establecer modos: "normal" y "oscuro" (clear and dark)
-- 3. Emepezar a preparar el desembarco en PHP,
+- 1. Estudiar el modo de establecer modos: "normal" y "oscuro" (clear and dark)
 */
-
-/* @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); */
 
 /* basic and general options */
 * {padding:0; margin:0; box-sizing:border-box; text-decoration:none; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;}
-/* *, *:before, *:after {box-sizing:inherit} */
 html, body {scroll-behavior:smooth; font-family: arial, sans-serif;/* font-family:"Poppins",sans-serif; */ }
-/* body {line-height:1.5; overflow-x:hidden;} */
 
 /* SCROLL BARS */
 body::-webkit-scrollbar {width: var(--p_small);}
@@ -21,16 +15,8 @@ body::-webkit-scrollbar-thumb {background: var(--scrollbar_thumb_col);}
 body::-webkit-scrollbar-button {background: var(--scrollbar_button_col);height: var(--p_small);}
 body::-webkit-scrollbar-button:hover {background: var(--scrollbar_button_col_hover);}
 
-/* Basic Text styles */
-/*
-h1 {font-size:36px}
-h2 {font-size:30px}
-h3 {font-size:24px}
-h4 {font-size:20px}
-h5 {font-size:18px}
-h6 {font-size:16px}
-*/
 h1,h2,h3,h4,h5,h6{margin:10px 0; word-break: break-word;}
+p {font-family: 'Helvetica', sans-serif; hyphens: auto; word-break: auto-phrase}	
 
 /* mn Text styles */
 .mn-serif 			{font-family:serif}
@@ -46,8 +32,6 @@ h1,h2,h3,h4,h5,h6{margin:10px 0; word-break: break-word;}
 .mn-text-left 	{text-align: left !important;}
 .mn-text-center	{text-align: center !important;}
 .mn-text-justify{text-align: justify !important;}
-
-p {hyphens: auto; word-break: auto-phrase; font-family: 'Helvetica', sans-serif;}	
 
 /* GENERAL CONTAINER */
 .container {/*max-width: 1500px;*/margin: auto;}
@@ -114,7 +98,7 @@ header {
 
 	/* nav .menu */		
   position: relative;
-	a {text-decoration:none; font-family: var(--header-a); }
+	a {font-family: var(--header-a); }
 
   ul {position: relative;}
   ul li {position: relative; display: inline-block; padding: var(--size_A);}
@@ -151,33 +135,42 @@ header {
 	border-radius: 20px;
 }
 
-/* SECTION's */
-section {width:100%; display: grid; grid-template-columns: 1fr;}
-section p {max-width: 1100px; margin:auto;}
-section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);}
+/* CONTAINER */
+.container {
+	section {
+		width:100%; 
+		display: grid; 
+		grid-template-columns: 1fr;
+		padding-bottom: 100px;
 
-/* BANNER's */
-.banner p {max-width: 1100px;	margin:auto;}
+		p {max-width: 1100px; margin:auto; font-size: var(--size_F); padding: 0 50px}
+		&:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);}
 
-/* Estilos propios relativos a cada Pag */
+		h1 {font-size: var(--size_C);}
+		h2 {font-size: var(--size_D); font-weight: 300; padding: 20px 0; margin: auto;}
+
+		/* Pag1 y Pag3 */
+		&:nth-child(odd) {
+			h1 {font-family: var(--banner_h1_family); font-weight: 200; }
+			h2 {width: 100%;	max-width: 1500px;}
+			img {width: var(--size_E); border-radius: 20px;}
+		}
+		/* Pag2 y Pag4 */
+		&:nth-child(even) {
+			h1 {font-family: var(--banner_h1_family_alt); font-weight: 500; }
+			h2 {width: 90%; max-width: 1000px}
+		}
+	}
+}
+
+/* Estilos propios específicos de cada Pag */
 /*************/
 /*   Pag 1   */
 /*************/
-#Pag1 h1 {font-weight: 200; font-family: var(--banner_h1_family); font-size: var(--size_C);}
-#Pag1 h2 {font-weight: 300; font-size: var(--size_D); animation: grow 1s linear; padding: 20px 0; width: 90%;	margin: auto; max-width: 1500px;}
-#Pag1 div {	animation: test 2s;	padding-bottom: 60px;}
-#Pag1 div img {width: var(--size_E);border-radius: 20px;}
-
-/*************/
-/*   Pag 2   */
-/*************/
-#Pag2 h1 {font-weight: 500; font-family: auto; font-size: var(--size_C);}
-#Pag2 h2 {font-weight: 300; font-size: var(--size_D); padding: 0; max-width: 1000px; margin-left:auto; width: 90%; margin: auto;}
-#Pag2 p {font-size:var(--size_F);padding: 0 50px;/* font-weight: 100; */}
-#Pag2 p:last-child {margin-bottom:var(--p_big);}
+/* #Pag1 div img {width: var(--size_E);border-radius: 20px;} */
 
 /* Carousel */
-#Pag2 .img {
+.carousel_background {
 	position: relative;
 	height: calc(clamp(128px, 18vw, 225px) + 220px);
 	background: #000;
@@ -219,28 +212,14 @@ section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);
 /*************/
 /*   Pag 3   */
 /*************/
-#Pag3 h1 {color: #59b9cd; font-weight: 200; font-family: var(--banner_h1_family); font-size: var(--size_C);}
-#Pag3 h2 {font-size: var(--size_D); font-weight: 300;	padding: 20px 0;	width: 90%;	margin: auto;color: #ccc;}
 #Pag3 a {position: relative;top:10px; color:#fff; padding: 20px; border-radius: 10px;display:block; width: 300px; margin: auto;	text-align: center;}
 #Pag3 a:hover {	background: #3ceaf012;}
 
-#Pag3 img {
-	width: var(--size_I)/*clamp(400px, 60%, 800px)*/;
-	margin: auto;
-	padding: var(--p_small);
-	border-radius: 20px;
-	animation: grow 2s ease-in-out;animation-timeline: view();animation-range: entry 0% cover 25%;
-}
 #Pag3 div {padding: 0 clamp(30px,6vw,150px);
 	font-family: helvetica, sans-serif;
 	font-weight: 100;
 	max-width: 1400px;
 	margin: auto;
-}
-#Pag3 p {
-	font-size: var(--size_J)/*clamp(.9rem, 1.5vw, 2rem)*/;
-	font-weight: 100;
-	padding-bottom: var(--p_mini);
 }
 #Pag3 ul {
 	padding: 40px;
@@ -270,9 +249,6 @@ section:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);
 /*************/
 /*   Pag 4   */
 /*************/
-#Pag4 {padding-bottom: 100px;}
-#Pag4 h1 {font-weight: 400; padding: inherit; font-family: auto; font-size: var(--size_C);}
-
 .gallery {
 	display:grid;
 	grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -387,6 +363,9 @@ footer ul li a {text-decoration: none; }
 /* ANIMATION CLASSES */
 .animate_appear {	animation: appear linear;animation-timeline: view();animation-range: entry 0% cover 35%;}
 .animate_entrada  {	animation: entrada 5s linear; animation-timeline: view(); animation-range: entry 0% cover 55%; }
+.animation_grow {animation: grow 1s linear }
+.animation_scale {animation: test 2s linear }
+.animation_grow_2 {animation: grow 2s ease-in-out;animation-timeline: view();animation-range: entry 0% cover 25%;}
 
 /***************/
 /*  KEYFRAMES  */
@@ -466,7 +445,6 @@ footer ul li a {text-decoration: none; }
 	.lupa.active i:first-child{display:none;}	
   .lupa.active i:last-child{display:initial;}
 
-
 	/* Pag 1 */
 	#Pag1 h1 {padding: 0; margin: 0;}
 	#Pag1 span {display:flex;margin:0 20px;gap:40px;}
@@ -475,13 +453,14 @@ footer ul li a {text-decoration: none; }
 	/* Pag 2 */
 	#Pag2 h2 {animation:none;}
 	#Pag2 p {padding: 10px 50px;}
-	#Pag2 .img {overflow: hidden; margin:15px auto;height:250px;width: 80%;}
+	/* for carousel */
+	.carousel_background {overflow: hidden; margin:15px auto;height:250px;width: 80%;}
 	:root {
 		--widthFrame: 128px;
 		--perspectiva: 600px;
 	}
 
-	/* Pag 3 info */
+	/* Pag 3 */
 	#Pag3 span {display:flex;gap:40px;margin:100px;background: azure;border-radius: 20px;}
 	#Pag3 h2 {color:#0071e3 !important}
 	#Pag3 img {max-width: 45%;}
@@ -562,14 +541,12 @@ footer ul li a {text-decoration: none; }
 	.lupa.active i:first-child{display:none;}	
   .lupa.active i:last-child{display:initial;}
 
-
-	/* Pag 1 */
-
 	/* PAG 2  */
 	#Pag2 h2 {animation:none;}
 	#Pag2 p {padding: 0 50px;}
-	#Pag2 .img {overflow:hidden;margin:20px auto; width:90%;height:400px;}
+
 	/* for carousel */
+	.carousel_background {overflow:hidden;margin:20px auto; width:90%;height:400px;}
 	:root {
 		--giro: 90deg;
 		--widthFrame: 180px;
@@ -581,7 +558,8 @@ footer ul li a {text-decoration: none; }
 	#Pag3 h1 {padding: 0;}
 	#Pag3 div ul {/*max-width: 100%;*/ padding:25px}
 	#Pag3 .atencion {padding: 10px; margin: 10px; font-size:1rem}
-
+	#Pag3 p {padding:0}
+	
 	/* Pag4 GALLERY CARD */
 	.gallery {grid-template-columns: 1fr !important;}
 	.gallery .card {flex-direction: column;width: 320px;height: 600px;}

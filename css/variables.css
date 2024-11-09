@@ -43,7 +43,6 @@
 
 	/* Other responsive sizes in pixels */
 	--size_E: clamp(300px, 80%, 720px); 	/* #Pag1 img img */
-	--size_I: clamp(300px, 80%, 720px);		/* #Pag4 img */
 	--size_N: clamp(60px, 6.0vw, 90px);		/* Header height se reduce a partir de 1500px 90/0,06 = 1500 */
 	--size_O: clamp(150px, 20vw, 360px); /* input width */
 
@@ -51,10 +50,24 @@
 	--header-a: Lucida, sans-serif;
 	--header_input: Lucida, sans-serif;
 	--banner_h1_family: 'Helvetica Neue', sans-serif;
+	--banner_h1_family_alt: Garamond, serif;
+	
 	--banner_h2_family: 'Poppins', sans-serif;
 	--gallery_p_family: 'Arial narrow', sans-serif;
 	--gallery_card_a_family: Arial, sans-serif;
 	
+	/*
+	WEB SAFE FONTS
+		Arial (sans-serif)
+		Verdana (sans-serif)
+		Tahoma (sans-serif)
+		Trebuchet MS (sans-serif)
+		Times New Roman (serif)
+		Georgia (serif)
+		Garamond (serif)
+		Courier New (monospace)
+		Brush Script MT (cursive)
+	*/
 	/* Carousel special */
 	/* valores a cambiar */
 	--widthFrame: clamp(128px, 18vw, 225px);
