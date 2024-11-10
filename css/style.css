@@ -147,18 +147,18 @@ header {
 		&:not(#Pag1) {margin-top: var(--size_N); scroll-margin-top: var(--size_N);}
 
 		h1 {font-size: var(--size_C);}
-		h2 {font-size: var(--size_D); font-weight: 300; padding: 20px 0; margin: auto;}
+		h2 {font-size: var(--size_D); font-weight: 300; padding: 20px 0; margin: auto; width: 90%}
 
 		/* Pag1 y Pag3 */
 		&:nth-child(odd) {
 			h1 {font-family: var(--banner_h1_family); font-weight: 200; }
-			h2 {width: 100%;	max-width: 1500px;}
+			h2 {max-width: 1500px;}
 			img {width: var(--size_E); border-radius: 20px;}
 		}
 		/* Pag2 y Pag4 */
 		&:nth-child(even) {
 			h1 {font-family: var(--banner_h1_family_alt); font-weight: 500; }
-			h2 {width: 90%; max-width: 1000px}
+			h2 {max-width: 1000px}
 		}
 	}
 }
