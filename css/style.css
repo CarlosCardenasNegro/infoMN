@@ -354,21 +354,14 @@ header {
 .detail_container {
 	width: 90%;
 	margin: auto;
+	h1 {font-size: initial;}
+	h2 {font-size: initial;}
+	div {	padding: 10px;}
+	summary {
+		width: max-content;
+		border-bottom: 1px solid red;
+	}
 }
-.detail_container > h1 {
-	font-size: initial;
-}
-.detail_container > h2 {
-	font-size: initial;
-}
-.detail_container > details {
-	padding: 10px;
-}
-.detail_container > summary {
-	width: max-content;
-	border-bottom: 1px solid red;
-}
-
 
 
 /* FOOTER */
