@@ -351,18 +351,25 @@ header {
 /* Detail container */
 /********************/
 
-.detail_container {
-	width: 90%;
+.detail {
+	max-width: 70%;
 	margin: auto;
-	h1 {font-size: initial;}
-	h2 {font-size: initial;}
-	div {	padding: 10px;}
-	summary {
-		width: max-content;
-		border-bottom: 1px solid red;
-	}
+	border: 1px solid #666;
+	background-image: linear-gradient(to top left, hsl(260deg 80% 80%) 0, hsl(0 deg 100% 95%));
 }
 
+summary {
+	padding: 0.5 rem;
+	cursor: pointer;
+	font-size: var(--size_D);
+}
+p {padding: 20px;}
+
+.details[open] {
+	summary {
+		border: 1px solid red;
+	}
+}
 
 /* FOOTER */
 footer {
