@@ -366,8 +366,8 @@ summary {
 	font-size: var(--size_H1);
 }
 .details_content {
-	p {	padding-bottom: 10px;}
-
+	h3 {font-size: 1.5rem; margin-left: 40px;}
+	p {	padding-bottom: 10px !important;}
 	ol {padding: 40px; color:#000}
 	ul {padding: 40px; color:#000}
 	li {font-size: var(--size_J);	text-align: left;	line-height: 2rem;	padding-bottom: 15px;	}
