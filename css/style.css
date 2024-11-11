@@ -358,8 +358,6 @@ header {
 	border: 1px solid #666;
 	border-radius: 10px;
 	background-image: linear-gradient(to top left, hsl(260deg 80% 80%) 0, hsl(0deg 100% 95%));
-	
-
 }
 
 summary {
@@ -369,7 +367,7 @@ summary {
 }
 p {padding: 20px;}
 
-.details[open] {
+.detail[open] {
 	summary {
 		border: 1px solid red;
 	}
