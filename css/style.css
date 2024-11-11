@@ -627,6 +627,12 @@ footer ul li a {text-decoration: none; }
 	.gallery .card div h1 {padding: 0; height: 18%;}
 	.gallery .card div p {height: 60%; overflow: hidden;}
 
+.detail {
+		max-width: 90%;
+		margin: 15px auto;
+		padding: 10px;
+	}
+
 	footer {flex-direction:column;border-radius: unset;}
 	footer .about {width:100%;}
 	footer .support {width:100%;}
