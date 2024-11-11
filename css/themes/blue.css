@@ -75,14 +75,11 @@
 .mn-theme .atencion 	{color: #f7b60b !important}
 .mn-theme-border 			{border-color:#ff0000 !important;}
 
-/* Pag2 */
-.mn-theme-inverse 		{color:#0071e3 !important; background-color:#f5f5f7 !important}
+/* Pag2  y Pag4*/
+.mn-theme-inverse 		{color:#0071e3 !important; background-color:#ddd !important}
 .mn-theme-inverse h1 	{color:#0071e3 !important}
 .mn-theme-inverse h2 	{color:#000 !important}
 .mn-theme-inverse p 	{color:#000 !important}
-
-/* Pag4 */
-.mn-theme-alt 				{color:#0071e3 !important; background-color:#ddd !important}
 
 /* Specific them for the cards */
 .gallery .card 			{background-color: #f6f5f5 !important}

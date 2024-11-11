@@ -345,6 +345,23 @@ header {
 	width: 100%;
 }
 
+/********************/
+/* Detail container */
+/********************/
+
+.detail_container {
+	width: 90%;
+	> details {
+		border-bottom: 1px solid #666;
+
+	}
+	> summary {
+		font-size: 1.5rem;
+		color
+	}
+}
+
+
 /* FOOTER */
 footer {
 	display:flex;
