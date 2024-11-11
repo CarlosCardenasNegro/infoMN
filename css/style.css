@@ -358,8 +358,8 @@ header {
 	border: 1px solid #666;
 	border-radius: 5px;
 	background-image: linear-gradient(to top left, #d0dde8 0, #eef5f8);
-
 }
+
 summary {
 	padding: 5px;
 	cursor: pointer;
