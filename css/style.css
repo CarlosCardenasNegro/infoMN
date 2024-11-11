@@ -345,21 +345,30 @@ header {
 	width: 100%;
 }
 
+/* Estilos especiales para las paginas de detalle de cada prueba */
+/* Creo que esto no está muy bien, deberían ser páginas nuevas */
 /********************/
 /* Detail container */
 /********************/
 
 .detail_container {
 	width: 90%;
-	> details {
-		border-bottom: 1px solid #666;
-
-	}
-	> summary {
-		font-size: 1.5rem;
-		color
-	}
+	margin: auto;
 }
+.detail_container > h1 {
+	font-size: initial;
+}
+.detail_container > h2 {
+	font-size: initial;
+}
+.detail_container > details {
+	padding: 10px;
+}
+.detail_container > summary {
+	width: max-content;
+	border-bottom: 1px solid red;
+}
+
 
 
 /* FOOTER */
