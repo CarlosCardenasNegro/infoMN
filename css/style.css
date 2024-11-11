@@ -354,8 +354,10 @@ header {
 .detail {
 	max-width: 70%;
 	margin: auto;
+	padding: 20px;
 	border: 1px solid #666;
-	background-image: linear-gradient(to top left, hsl(260deg 80% 80%) 0, hsl(0 deg 100% 95%));
+	border-radius: 10px;
+	background-image: linear-gradient(to top left, hsl(260deg 80% 80%) 0, hsl(0deg 100% 95%));
 }
 
 summary {
