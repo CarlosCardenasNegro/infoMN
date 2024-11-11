@@ -525,6 +525,13 @@ footer ul li a {text-decoration: none; }
 	footer p {font-size:1rem;}
 	footer h1 {text-align:left;}
 	footer ul li {text-align:left;}
+
+	/* Details*/
+	.detail {
+		max-width: 90%;
+		margin: 15px auto;
+		padding: 10px;
+	}
 }
 
 /***********************************************************/
