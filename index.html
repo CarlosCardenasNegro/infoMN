@@ -59,7 +59,7 @@
 				-->			
 		</div>
 			
-		<a href="#" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
+		<a href="index.html" class="logo mn-text-theme"><i class="icon-atomo-solid"></i></a>
 			
 			<!-- NOTA: CAMBIO A NUEVO MENU CLASS - 26/10/2024 12:11	-->
 			<nav class="menu">
@@ -516,155 +516,132 @@
 		const lupa = document.querySelector('header .lupa');
 		const input = document.querySelector('.search');
 		const menuText = document.querySelector('header nav ul');
-
 		const language = document.querySelector('.language');
 		const idioma = document.querySelector('.language ul');
 		const flag = document.querySelector('.flag img');
 		const iconMovil = document.querySelector('.icon-movil');
-
 		const SP = document.querySelector(".scrollPosition");		
-
 		const pag4 = document.querySelector("#Pag4");
-
-
-		// /* Solo para cuando el menu esta activo si pulso fuera se va ...*/
-		// window.addEventListener('click', (e) => {
-		// 	console.log(e.target);
-		// 	if (header.classList.contains('active')) {
-		// 		if(!(document.querySelector('.menu').contains(e.target))) {
-		// 			console.log('Puse fuera');
-		// 			//header.classList.toggle('active');
-		// 		}
-		// 	}			
-		// });
-
-
-		// pruebita.addEventListener('click', () => {
-		// 	let tagN = event.target.tagName;
-		// });
-
-		// Test for movile device
-		//const movile = navigator.userAgentData.mobile;
 
 		// Gestión de iconMovil
 		/*
-			Nos podemos encontrar ICONOS e IMAGE:
-				- LOS iconos tienen acciones (ej.: toggle, lupa, calendar,...)
-				- LAS imágenes solo son informativas (ej.: flag)
+		Nos podemos encontrar ICONOS e IMAGE:
+		- LOS iconos tienen acciones (ej.: toggle, lupa, calendar,...)
+		- LAS imágenes solo son informativas (ej.: flag)
 		*/
 		iconMovil.addEventListener("click", () => {
 			// donde se pulsó ?
 			let tagName = event.target.tagName;
 
 			switch (tagName) {
-				case 'I':
-					let iconName = event.target.parentNode.classList[0];
-					switch (iconName) {
-						case "calendar":
-							console.log("Haré algo con el calendario...");
-							break;
-						case "toggle":
-							// debo controlar si el input (.search) está .active
-							if (input.classList.contains('active')) {
-								input.classList.toggle('active');
-								lupa.classList.toggle('active');
-							}
-							header.classList.toggle('active');
-							menutoggle.classList.toggle('active');
-							break;
-						case "lupa":
-							// debo controlar si el menu está abierto...
-							if (header.classList.contains('active')) {
-								header.classList.toggle('active');
-								menutoggle.classList.toggle('active');
-							}
+			case 'I':
+			let iconName = event.target.parentNode.classList[0];
+				switch (iconName) {
+					case "calendar":
+						console.log("Haré algo con el calendario...");
+						break;
+					case "toggle":
+						// debo controlar si el input (.search) está .active
+						if (input.classList.contains('active')) {
 							input.classList.toggle('active');
 							lupa.classList.toggle('active');
-							break;
-						default:
-							break;
+						}
+						header.classList.toggle('active');
+						menutoggle.classList.toggle('active');
+						break;
+					case "lupa":
+						// debo controlar si el menu está abierto...
+						if (header.classList.contains('active')) {
+							header.classList.toggle('active');
+							menutoggle.classList.toggle('active');
+						}
+						input.classList.toggle('active');
+						lupa.classList.toggle('active');
+						break;
+					default:
+						break;
 					}
 				default:
 					break;
-			}
-		});
-
-		/* language events */
-		language.addEventListener("click", (evento) => {
-			// ojo puedeo haber hecho click en la <li> o en el<img>
-			if (evento.target.tagName == "IMG") {
-				bandera = evento.target.getAttribute("src");
-			} else {
-				bandera = evento.target.childNodes[0].getAttribute("src");
-			}
-			//flag.setAttribute("src","");
-			flag.setAttribute("src", bandera);
-			// ahora lo suyo sería cancelar el hover pero no se como??
-			// event.preventDefault(); /* no se si esto hace algo...*/
-		});
-
-		// changing menu color on page view
-		document.addEventListener('scroll', () => {
-
-			const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
-
-			const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
-			const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
-			const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-			const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
-			//
-			const menu_1 = document.querySelector('.menu ul li:first-child');
-	
-			let scrollPosition = window.scrollY;
-
-			let vp = visualViewport.height;
-			// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
-			/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
-
-			if ((pag2Top <= 0 && pag3Top >= 0) ||
-				(pag4Top <= 0 && footerTop >= 0)) {
-				header.classList.remove('mn-theme-header');
-				header.classList.add('mn-theme-header-inverse');
-				// menu first-child
-				menu_1.classList.remove('mn-theme-menu-1');
-				menu_1.classList.add('mn-theme-inverse-menu-1');
-			} else {
-				header.classList.remove('mn-theme-header-inverse');
-				header.classList.add('mn-theme-header');
-				// menu first-child
-				menu_1.classList.remove('mn-theme-inverse-menu-1');
-				menu_1.classList.add('mn-theme-menu-1');
-			}
-
-		});
-
-		// eventos de persiana
-		const miSpan = document.querySelectorAll('.persiana .lama span');
-		// ad eventListener to all span elements
-		miSpan.forEach(div => div.addEventListener('click', response));
-
-		function response() {
-			// event.currentTarget.classList.toggle('active');
-			event.currentTarget.parentNode.classList.toggle('active');
-		}
-
-		// preparándome para el PHP
-		function request(pagina) {
-
-			var xmlhttp = new XMLHttpRequest();
-
-			xmlhttp.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
-					pag4.innerHTML = this.responseText;
-					//cuerpo.textContent = this.responseText;
 				}
-			};
-			xmlhttp.open("GET", pagina, true);
-			xmlhttp.send();
-		}
-
-		/* Deprecated */
-		/* 		function getDimensions () {
+		});
+			
+			/* language events */
+			language.addEventListener("click", (evento) => {
+				// ojo puedeo haber hecho click en la <li> o en el<img>
+					if (evento.target.tagName == "IMG") {
+						bandera = evento.target.getAttribute("src");
+					} else {
+						bandera = evento.target.childNodes[0].getAttribute("src");
+					}
+					//flag.setAttribute("src","");
+					flag.setAttribute("src", bandera);
+					// ahora lo suyo sería cancelar el hover pero no se como??
+					// event.preventDefault(); /* no se si esto hace algo...*/
+				});
+				
+				// changing menu color on page view
+				document.addEventListener('scroll', () => {
+					
+					const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
+					
+					const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
+					const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
+					const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+					const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
+					//
+					const menu_1 = document.querySelector('.menu ul li:first-child');
+					
+					let scrollPosition = window.scrollY;
+					
+					let vp = visualViewport.height;
+					// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
+					/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
+					
+					if ((pag2Top <= 0 && pag3Top >= 0) ||
+					(pag4Top <= 0 && footerTop >= 0)) {
+						header.classList.remove('mn-theme-header');
+						header.classList.add('mn-theme-header-inverse');
+						// menu first-child
+						menu_1.classList.remove('mn-theme-menu-1');
+						menu_1.classList.add('mn-theme-inverse-menu-1');
+					} else {
+						header.classList.remove('mn-theme-header-inverse');
+						header.classList.add('mn-theme-header');
+						// menu first-child
+						menu_1.classList.remove('mn-theme-inverse-menu-1');
+						menu_1.classList.add('mn-theme-menu-1');
+					}
+					
+				});
+									
+			// eventos de persiana
+			//const miSpan = document.querySelectorAll('.persiana .lama span');
+			// ad eventListener to all span elements
+			//miSpan.forEach(div => div.addEventListener('click', response));
+			
+			//function response() {
+				// event.currentTarget.classList.toggle('active');
+				//	event.currentTarget.parentNode.classList.toggle('active');
+				//}
+				
+				// preparándome para el PHP
+				function request(pagina) {
+					
+					var xmlhttp = new XMLHttpRequest();
+					
+					xmlhttp.onreadystatechange = function () {
+						if (this.readyState == 4 && this.status == 200) {
+							pag4.innerHTML = this.responseText;
+							//cuerpo.textContent = this.responseText;
+						}
+					};
+					xmlhttp.open("GET", pagina, true);
+					xmlhttp.send();
+				}
+				
+				/* Deprecated */
+				/* 		function getDimensions () {
 					const pages = [
 						{top: 0, bottom: 0},
 						{top: 0, bottom: 0},
@@ -672,51 +649,69 @@
 						{top: 0, bottom: 0},
 						{top: 0, bottom: 0},
 					]
-		
+					
 					const dim = document.querySelectorAll(".banner");
 					dim.forEach ((element, indice) => {
 						let rec = element.getBoundingClientRect();
 						pages[indice].top = rec.top;
 						pages[indice].bottom = rec.bottom;
 					});
-		
+					
 					const foo = document.querySelectorAll("footer").getBoundingClientRect();
 					pages[4].top = foo.top;
 					pages[4].bottom = foo.bottom;
-		
+					
 					return pages;
-		
+					
 				}
-			// get Visibility for Pages
-					const options = {
+				// get Visibility for Pages
+				const options = {
 					root: null,
 					threshold:  0.32,
 				};
-		
-		
+				
+				
 				const observer = new IntersectionObserver((entries) => {
 					// hay 4 opciones:
 					// movile landscape
 					// movile portrait
 					// desktop
 					entries.forEach(entry => {
-							if (entry.isIntersecting) {
-								// se ve per tengo que averiguar si estoy bajando o subiendo
-								if (entry.boundingClientRect.top > 1) {
-									menuText.classList.remove('mn-theme-menu');
-									menuText.classList.add('mn-theme-menu-inverse');
-								}
-									console.log('Element is in viewport')
-							} else {
-								menuText.classList.remove('mn-theme-menu-inverse');
-								menuText.classList.add('mn-theme-menu');
-								console.log('Element is not in viewport')
+						if (entry.isIntersecting) {
+							// se ve per tengo que averiguar si estoy bajando o subiendo
+							if (entry.boundingClientRect.top > 1) {
+								menuText.classList.remove('mn-theme-menu');
+								menuText.classList.add('mn-theme-menu-inverse');
 							}
-					})
-				}, options);
-				observer.observe(document.querySelector('#Pag2'))
-		
-		 */
+							console.log('Element is in viewport')
+						} else {
+							menuText.classList.remove('mn-theme-menu-inverse');
+						menuText.classList.add('mn-theme-menu');
+						console.log('Element is not in viewport')
+					}
+				})
+			}, options);
+			observer.observe(document.querySelector('#Pag2'))
+			
+			*/
+			// /* Solo para cuando el menu esta activo si pulso fuera se va ...*/
+			// window.addEventListener('click', (e) => {
+			// 	console.log(e.target);
+			// 	if (header.classList.contains('active')) {
+			// 		if(!(document.querySelector('.menu').contains(e.target))) {
+			// 			console.log('Puse fuera');
+			// 			//header.classList.toggle('active');
+			// 		}
+			// 	}			
+			// });
+			
+			
+			// pruebita.addEventListener('click', () => {
+			// 	let tagN = event.target.tagName;
+			// });
+			
+			// Test for movile device
+			//const movile = navigator.userAgentData.mobile;
 	</script>
 </body>
 
