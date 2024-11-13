@@ -531,7 +531,7 @@
 					if (this.readyState == 4 && this.status == 200) {
 						pag4.innerHTML = this.responseText;
 						// goto a Pag4
-						window.scroll({top: 0, left: pag4Top, behavior: "auto",	});
+						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 						//cuerpo.textContent = this.responseText;
 					}
 				};
