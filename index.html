@@ -431,6 +431,10 @@
 		// first menu element
 		const menu_1 = document.querySelector('.menu ul li:first-child');		
 
+		// página actual para el cambio de Pruebas
+		// inicio ... #Pag4 contiene TODAS las pruebas
+		let actualPage = 'inicio';
+
 		// Gestión de iconMovil
 		/*
 		Nos podemos encontrar ICONOS e IMAGE:
@@ -515,6 +519,10 @@
 	
 			// preparándome para el PHP
 			function request(pagina) {
+
+				// Que página me solicitan??
+				actualPage = pagina;
+
 				
 				var xmlhttp = new XMLHttpRequest();
 				
@@ -529,8 +537,23 @@
 				xmlhttp.open("GET", pagina, true);
 				xmlhttp.send();
 			}
-				
-				/* Deprecated */
+
+			/* PARA TENERLO EN CUENTA MAS ADELANTE */
+			/*
+				* No cargo el javascript hasta el final de la carga del DOM
+				*/
+/* 				document.addEventListener("DOMContentLoaded", () => {
+					console.log("Example page has loaded!");
+
+					var tag = document.createElement("script");
+					tag.src = "/infoMN/webroot/js/main.js";
+					document.getElementsByTagName("head")[0].appendChild(tag);
+
+			});
+ */
+
+
+			/* Deprecated */
 
 		// eventos de persiana
 			//const miSpan = document.querySelectorAll('.persiana .lama span');
