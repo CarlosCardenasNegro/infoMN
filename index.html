@@ -408,17 +408,27 @@
 
 	<script>
 		// Constants
-		const menutoggle = document.querySelector('header .toggle');
+		// icon movil events
 		const header = document.querySelector('header');
+
+		const flag = document.querySelector('.flag img');
+		const iconMovil = document.querySelector('.icon-movil');
+		const menutoggle = document.querySelector('header .toggle');
 		const lupa = document.querySelector('header .lupa');
 		const input = document.querySelector('.search');
+
 		const menuText = document.querySelector('header nav ul');
 		const language = document.querySelector('.language');
 		const idioma = document.querySelector('.language ul');
-		const flag = document.querySelector('.flag img');
-		const iconMovil = document.querySelector('.icon-movil');
-		const SP = document.querySelector(".scrollPosition");		
 		const pag4 = document.querySelector("#Pag4");
+		
+		// scroll events
+		const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
+
+
+
+
+		// const SP = document.querySelector(".scrollPosition");		
 
 		// Gestión de iconMovil
 		/*
@@ -463,56 +473,75 @@
 				}
 		});
 			
-			/* language events */
-			language.addEventListener("click", (evento) => {
-				// ojo puedeo haber hecho click en la <li> o en el<img>
-					if (evento.target.tagName == "IMG") {
-						bandera = evento.target.getAttribute("src");
-					} else {
-						bandera = evento.target.childNodes[0].getAttribute("src");
-					}
-					//flag.setAttribute("src","");
-					flag.setAttribute("src", bandera);
-					// ahora lo suyo sería cancelar el hover pero no se como??
-					// event.preventDefault(); /* no se si esto hace algo...*/
-				});
+		/* language events */
+		language.addEventListener("click", (evento) => {
+			// ojo puedeo haber hecho click en la <li> o en el<img>
+				if (evento.target.tagName == "IMG") {
+					bandera = evento.target.getAttribute("src");
+				} else {
+					bandera = evento.target.childNodes[0].getAttribute("src");
+				}
+				//flag.setAttribute("src","");
+				flag.setAttribute("src", bandera);
+				// ahora lo suyo sería cancelar el hover pero no se como??
+				// event.preventDefault(); /* no se si esto hace algo...*/
+			});
 				
-				// changing menu color on page view
-				document.addEventListener('scroll', () => {
-					
-					const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
-					
-					const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
-					const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
-					const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-					const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
-					//
-					const menu_1 = document.querySelector('.menu ul li:first-child');
-					
-					let scrollPosition = window.scrollY;
-					
-					let vp = visualViewport.height;
-					// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
-					/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
-					
-					if ((pag2Top <= 0 && pag3Top >= 0) ||
-					(pag4Top <= 0 && footerTop >= 0)) {
-						header.classList.remove('mn-theme-header');
-						header.classList.add('mn-theme-header-inverse');
-						// menu first-child
-						menu_1.classList.remove('mn-theme-menu-1');
-						menu_1.classList.add('mn-theme-inverse-menu-1');
-					} else {
-						header.classList.remove('mn-theme-header-inverse');
-						header.classList.add('mn-theme-header');
-						// menu first-child
-						menu_1.classList.remove('mn-theme-inverse-menu-1');
-						menu_1.classList.add('mn-theme-menu-1');
+		// changing menu color on page view
+		document.addEventListener('scroll', () => {
+			
+			// const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;
+			
+			const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
+			const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
+			const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+			const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
+			//
+			const menu_1 = document.querySelector('.menu ul li:first-child');
+			
+			let scrollPosition = window.scrollY;
+			
+			let vp = visualViewport.height;
+			// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
+			/*" scroll: " + window.scrollY + "  viewPort: " + vp + " = " + (window.scrollY + vp - 90);*/
+			
+			if ((pag2Top <= 0 && pag3Top >= 0) ||
+			(pag4Top <= 0 && footerTop >= 0)) {
+				header.classList.remove('mn-theme-header');
+				header.classList.add('mn-theme-header-inverse');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-menu-1');
+				menu_1.classList.add('mn-theme-inverse-menu-1');
+			} else {
+				header.classList.remove('mn-theme-header-inverse');
+				header.classList.add('mn-theme-header');
+				// menu first-child
+				menu_1.classList.remove('mn-theme-inverse-menu-1');
+				menu_1.classList.add('mn-theme-menu-1');
+			}
+			
+		});
+	
+			// preparándome para el PHP
+			function request(pagina) {
+				
+				var xmlhttp = new XMLHttpRequest();
+				
+				xmlhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						pag4.innerHTML = this.responseText;
+						// goto a Pag4
+						window.scroll({top: 0, left: pag4Top, behavior: "auto",	});
+						//cuerpo.textContent = this.responseText;
 					}
-					
-				});
-									
-			// eventos de persiana
+				};
+				xmlhttp.open("GET", pagina, true);
+				xmlhttp.send();
+			}
+				
+				/* Deprecated */
+
+		// eventos de persiana
 			//const miSpan = document.querySelectorAll('.persiana .lama span');
 			// ad eventListener to all span elements
 			//miSpan.forEach(div => div.addEventListener('click', response));
@@ -521,23 +550,8 @@
 				// event.currentTarget.classList.toggle('active');
 				//	event.currentTarget.parentNode.classList.toggle('active');
 				//}
-				
-				// preparándome para el PHP
-				function request(pagina) {
-					
-					var xmlhttp = new XMLHttpRequest();
-					
-					xmlhttp.onreadystatechange = function () {
-						if (this.readyState == 4 && this.status == 200) {
-							pag4.innerHTML = this.responseText;
-							//cuerpo.textContent = this.responseText;
-						}
-					};
-					xmlhttp.open("GET", pagina, true);
-					xmlhttp.send();
-				}
-				
-				/* Deprecated */
+	
+
 				/* 		function getDimensions () {
 					const pages = [
 						{top: 0, bottom: 0},
