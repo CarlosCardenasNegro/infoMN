@@ -525,15 +525,6 @@
 		const idioma = document.querySelector('.language ul');
 		const pag4 = document.querySelector("#Pag4");
 		
-		// change menu colors and scroll events
-		const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
-		const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
-		const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
-		const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-		const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
-		// first menu element
-		const menu_1 = document.querySelector('.menu ul li:first-child');		
-
 		// página actual para el cambio de Pruebas
 		// inicio ... #Pag4 contiene TODAS las pruebas
 		let actualPagina = 'pruebas';
@@ -597,7 +588,15 @@
 				
 		// changing menu color on page view
 		document.addEventListener('scroll', () => {
-			
+				// change menu colors and scroll events
+				const headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
+				const pag2Top = document.querySelector('#Pag2').getBoundingClientRect().top - headerHeight;
+				const pag3Top = document.querySelector('#Pag3').getBoundingClientRect().top - headerHeight;
+				const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+				const footerTop = document.querySelector('footer').getBoundingClientRect().top - headerHeight;
+				// first menu element
+				const menu_1 = document.querySelector('.menu ul li:first-child');		
+
 			let scrollPosition = window.scrollY;			
 			let vp = visualViewport.height;
 			// SP.innerHTML = "Pag2top: " + pag2Top + " Pag3top: " + pag3Top + " Pag4top: " + pag4Top +  " footertop: " + footerTop ;
@@ -664,6 +663,9 @@
 			 * @param string pagina
 			 */
 			function request(pagina) {
+
+				// actual posición de la Pag4
+				const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
 
 				var xmlhttp = new XMLHttpRequest();
 				
