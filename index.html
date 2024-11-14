@@ -642,7 +642,7 @@
 						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 				} else {
 					// modifico menú a la pagina previa -actualPagina-
-					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', "javascript: request(${actualPagina})");
+					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', 'javascript: request("${actualPagina}")');
 
 					// set la nueva 'actualPagina'
 					actualPagina = pagina;
