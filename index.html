@@ -71,7 +71,7 @@
 							<li><a href="#Pag3" title="Como lo hacemos">Como lo hacemos</a></li>
 						</ul>
 					</li>
-					<li><a href="javascript: request('pruebas.html')" title="Pruebas diagnósticas">Pruebas</a></li>
+					<li id="pruebas"><a href="javascript: request('pruebas')" title="Pruebas diagnósticas">Pruebas</a></li>
 					<li><a href="" title="Usuarios...">Login</a></li>
 					<li class="language"><a href="" title="Seleccionar Idioma...">Idioma</a>
 						<ul>
@@ -373,7 +373,7 @@
 						<h1>Cardiología</h1>
 						<p>Permite valorar el estado del riego sanguíneo cardiaco y determinar en algunos casos la extensión y localización
 							de áreas de	infarto de miocardio.</p>
-						<a href="javascript:request('cardiologia.html')"><span class="shadow-4">Para saber más...</span></a>
+						<a href="javascript:request('cardiologia')"><span class="shadow-4">Para saber más...</span></a>
 					</div>
 				</div>
 
@@ -536,7 +536,7 @@
 
 		// página actual para el cambio de Pruebas
 		// inicio ... #Pag4 contiene TODAS las pruebas
-		let actualPage = 'pruebas.html';
+		let actualPagina = 'pruebas';
 
 		// Gestión de iconMovil
 		/*
@@ -622,21 +622,49 @@
 	
 			// preparándome para el PHP
 
-			function selectPagina(
-				// Que página me solicitan??
+			/**
+			 * Recupera la pagina solicitada y modifica el menu si fuera necesario
+			 * 
+			 * Si la pagina es la misma (caso del inicio) solo salta hasta su posición
+			 * Si es otra la carga y sustitutye a la actual y modifica el menu para
+			 * regresar a la anterior o al inicio.
+			 * Para saber en que nivel estoy establezco una bandera "level". Si level es
+			 * 0 estoy al inicio -pruebas.html-
+			 * 
+			 * @param string pagina página solicitada
+			 */
+			function selectPagina (pagina) {
+				// Que página solicitan??
 				// si estoy al inicio "pruebas" solo salto
 
-				if ((pagina == "pruebas")) && (actualPagina == "pruebas")) {
+				if ((pagina == "pruebas") && (actualPagina == "pruebas")) {
 						// goto a Pag4
 						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 				} else {
-					// cargo pagina
-				
+					// modifico menú a la pagina previa -actualPagina-
+					let nuevoMenu = querySelector('#pruebas').setAttribute('href', "javascript: request(${actualPagina})");
+
+					// set la nueva 'actualPagina'
+					actualPagina = pagina;
+
+					// añado extensión
+					pagina = pagina + '.html';
+
+					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
+					// más adelante....:-(
+					request(pagina);
 				}
+			}
+
+			/**
+			 * Carga de páginas
+			 * 
+			 * Asyncrono request
+			 * 
+			 * @param string pagina
+			 */
 			function request(pagina) {
 
-
-				
 				var xmlhttp = new XMLHttpRequest();
 				
 				xmlhttp.onreadystatechange = function () {
