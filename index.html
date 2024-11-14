@@ -633,17 +633,11 @@
 			 * @param string pagina página solicitada
 			 */
 			function selectPagina (pagina) {
-				// Que página solicitan??
-				// si estoy al inicio "pruebas" solo salto
-
-				if ((pagina == "pruebas") && (actualPagina == "pruebas")) {
-						// goto a Pag4
-						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
-				} else {
-					// modifico menú a la pagina previa -actualPagina-
+		
+				// modifico menú a la pagina previa -actualPagina-
 					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${actualPagina}")`);
 
-					// set la nueva 'actualPagina'
+					// actualizo 'actualPagina'
 					actualPagina = pagina;
 
 					// añado extensión
@@ -652,7 +646,7 @@
 					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
 					// más adelante....:-(
 					request(pagina);
-				}
+				
 			}
 
 			/**
