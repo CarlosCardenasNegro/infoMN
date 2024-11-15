@@ -621,20 +621,19 @@
 			// preparándome para el PHP
 
 			/**
-			 * Recupera la pagina solicitada y modifica el menu si fuera necesario
+			 * Recupera la pagina solicitada y modifica el menu.
 			 * 
-			 * Si la pagina es la misma (caso del inicio) solo salta hasta su posición
-			 * Si es otra la carga y sustitutye a la actual y modifica el menu para
-			 * regresar a la anterior o al inicio.
-			 * Para saber en que nivel estoy establezco una bandera "level". Si level es
-			 * 0 estoy al inicio -pruebas.html-
+			 * Solo hay dos casos el inicio en que el menu será "Pruebas"
+			 * y cualquier grupo en el que menu sera el propio grupo.
+			 * Para saberlo uso Paginas.includes('pagina') asi se si estoy en
+			 * el nivel grupo o subgrupo y de acuerdo a ello cambio el menu...
 			 * 
 			 * @param string pagina página solicitada
 			 */
 			function selectPagina (pagina) {
 		
 				// modifico menú a la pagina previa -actualPagina-
-					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagPrevia}")`);
+					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagActual}")`);
 
 					// actualizo 'actualPagina'
 					pagActual = pagina;
