@@ -634,10 +634,10 @@
 			function selectPagina (pagina) {
 		
 				// modifico menú a la pagina previa -actualPagina-
-					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${actualPagina}")`);
+					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagPrevia}")`);
 
 					// actualizo 'actualPagina'
-					actualPagina = pagina;
+					pagActual = pagina;
 
 					// añado extensión
 					pagina = pagina + '.html';
@@ -648,6 +648,7 @@
 					
 					// scroll hasta #Pag4
 				// actual posición de la Pag4
+				let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
 				let pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
 				// goto a Pag4
 				window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
