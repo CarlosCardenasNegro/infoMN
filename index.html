@@ -633,13 +633,13 @@
 			function selectPagina (pagina) {
 		
 				// modifico menú a la pagina previa -actualPagina-
-					let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagActual}")`);
+				//let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagActual}")`);
 
-					// actualizo 'actualPagina'
-					pagActual = pagina;
+				// actualizo 'actualPagina'
+				//pagActual = pagina;
 
-					// añado extensión
-					pagina = pagina + '.html';
+				// añado extensión
+				pagina = pagina + '.html';
 
 					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
 					// más adelante....:-(
