@@ -523,12 +523,12 @@
 		const menuText = document.querySelector('header nav ul');
 		const language = document.querySelector('.language');
 		const idioma = document.querySelector('.language ul');
-		const pag4 = document.querySelector("#Pag4");
 		
 		// página actual para el cambio de Pruebas
-		// inicio ... #Pag4 contiene TODAS las pruebas
-		let actualPagina = 'pruebas';
-
+		// #Pag4 contiene TODAS las pruebas
+		let pagActual = 'pruebas';
+		let pagPrevia = 'pruebas';
+		
 		// Gestión de iconMovil
 		/*
 		Nos podemos encontrar ICONOS e IMAGE:
@@ -616,7 +616,6 @@
 				menu_1.classList.remove('mn-theme-inverse-menu-1');
 				menu_1.classList.add('mn-theme-menu-1');
 			}
-			
 		});
 	
 			// preparándome para el PHP
@@ -646,7 +645,13 @@
 					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
 					// más adelante....:-(
 					request(pagina);
-				
+					
+					// scroll hasta #Pag4
+				// actual posición de la Pag4
+				let pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+				// goto a Pag4
+				window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
+
 			}
 
 			/**
@@ -658,16 +663,11 @@
 			 */
 			function request(pagina) {
 
-				// actual posición de la Pag4
-				const pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-
 				var xmlhttp = new XMLHttpRequest();
 				
 				xmlhttp.onreadystatechange = function () {
 					if (this.readyState == 4 && this.status == 200) {
 						pag4.innerHTML = this.responseText;
-						// goto a Pag4
-						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 						//cuerpo.textContent = this.responseText;
 					}
 				};
