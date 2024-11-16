@@ -411,6 +411,10 @@ footer ul li a {text-decoration: none; }
 .flex-items-start {align-items: start;}
 .flex-items-center {align-items: center;}
 
+.disabled {cursor:not-allowed; opacity:0.3}
+.disabled *,:disabled *{pointer-events:none}
+.disabled:hover * {visibility: hidden}
+
 /* ANIMATION CLASSES */
 .animate_appear {	animation: appear linear;animation-timeline: view();animation-range: entry 0% cover 35%;}
 .animate_entrada  {	animation: entrada 5s linear; animation-timeline: view(); animation-range: entry 0% cover 55%; }

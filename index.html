@@ -541,11 +541,13 @@
 		class menuOpt {
 			// private properties
 			#name;						//filename
+			#showName;				//nombre visible en el menu -gral. el mismo que el father pero sintaxticamente bien
 			#father;					//ascendent menu
 			#descendents;			//descendents menues
 
-			constructor(name, father, descendents) {
+			constructor(name, showName, father, descendents) {
 				this.#name = name;
+				this.#showName = showName;
 				this.#father = father;
 				this.#descendents = descendents;
 			}
@@ -560,6 +562,16 @@
 					console.log ('invalid name property')
 				}
 			}
+			// #showName
+			get showName() {return this.#showName;}
+
+			set showName(newshowName) {
+				if(newshowName) {
+					this.#showName = newshowName;
+				} else {
+					console.log ('invalid name property')
+				}
+			}
 			// #father
 			get father() {return this.#father;}
 
@@ -570,7 +582,6 @@
 					console.log ('invalid name property')
 				}
 			}
-
 			//#descendents
 			get descendents() {return this.#descendents;}
 
@@ -583,33 +594,41 @@
 			}
 		}
 		
-		// NOTA: para obtener el nombre de un clase se llama al constructor de la clase -> 'class.constructor.name'
-		const mibi = new menuOpt('mibi', 'cardiologia', null);
-		const amiloidosis = new menuOpt('amiloidosis', 'cardiologia', null);
-		const cardiologia = new menuOpt('cardiologia', 'pruebas', [mibi, amiloidosis]);
-		
 		/**
 		 * Uso:
 		 *  cardiologia.father => 'pruebas'
 		 *  cardiologia.descendents[0] => 'perfusion' o cardiologia.descendents[0].name  => 'perfusion'
 		 *  cardiologia.descendents[0].father => 'cardiologia'
 		 *  cardiologia.descendents[0].descendents => null
+		 * 
+		 *  NOTA: para obtener el nombre de un clase se llama
+		 *  al constructor de la clase -> 'class.constructor.name'
 		 */ 
+		const mibi = 				new menuOpt ('mibi', 				'◀︎ Cardiología', 'cardiologia', null);
+		const amiloidosis = new menuOpt ('amiloidosis', '◀︎ Cardiología', 'cardiologia', null);
+		const cardiologia = new menuOpt ('cardiologia', '◀︎ Pruebas', 'pruebas', [mibi, amiloidosis]);
 		
-		const perfPulmonar = new menuOpt('perfusion', 'neumologia', null);
-		const ventilacion = new menuOpt('ventilacion', 'neumologia', null);
-		const neumologia = new menuOpt('neumologia', 'pruebas', [perfPulmonar, ventilacion]);
+		const perfusion = 		new menuOpt ('perfusion', 	'◀︎ Neumología', 'neumologia', null);
+		const ventilacion = 	new menuOpt ('ventilacion', '◀︎ Neumología', 'neumologia', null);
+		const neumologia = 		new menuOpt ('neumologia', 	'◀︎ Pruebas', 'pruebas', [perfusion, ventilacion]);
 
-		const nefrourologia = new menuOpt('nefrourologia', 'pruebas', null);
-		const traumareuma = new menuOpt('traumareuma', 'pruebas', null);
-		const neurologia = new menuOpt('neurologia', 'pruebas', null);
-		const endocrinologia = new menuOpt('endocrinologia', 'pruebas', null);
-		const digestivo = new menuOpt('digestivo', 'pruebas', null);
-		const terapia = new menuOpt('terapia', 'pruebas', null);
-		const miscelanea = new menuOpt('miscelanea', 'pruebas', null);
+		const renograma = 		new menuOpt ('renograma',			'Negro-Urología', 'nefrourologia', null);
+		const renal = 				new menuOpt ('renal',					'Negro-Urología',	'nefrourologia', null);
+		const nefrourologia = new menuOpt ('nefrourologia', '◀︎ Pruebas', 'pruebas', [renograma, renal]);
+
+		const osea =  				new menuOpt('osea', 'Trauma-Reuma', 'traumareuma', null);
+		const articular =			new menuOpt('articular', 'Trauma-Reuma', 'traumareuma', null);
+		const leucos =				new menuOpt('leucos', 'Trauma-Reuma', 'traumareuma', null);
+		const traumareuma = 	new menuOpt('traumareuma', '◀︎ Pruebas', 'pruebas', [osea, articular, leucos]);
+
+		const neurologia = 			new menuOpt('neurologia', 'pruebas', null);
+		const endocrinologia = 	new menuOpt('endocrinologia', 'pruebas', null);
+		const digestivo = 			new menuOpt('digestivo', 'pruebas', null);
+		const terapia = 				new menuOpt('terapia', 'pruebas', null);
+		const miscelanea = 			new menuOpt('miscelanea', 'pruebas', null);
 		
 		// root menu
-		const pruebas = new menuOpt ('pruebas', 'pruebas', [cardiologia, neumologia, nefrourologia,traumareuma,neurologia,endocrinologia,digestivo,terapia,miscelanea]);
+		const pruebas = new menuOpt ('pruebas', 'Pruebas', 'pruebas', [cardiologia, neumologia, nefrourologia,traumareuma,neurologia,endocrinologia,digestivo,terapia,miscelanea]);
 
 		// Gestión de iconMovil
 		/*
@@ -713,34 +732,52 @@
 			 * @param class menuOpt página solicitada
 			 */
 			function selectPagina (pagina) {
-				// e esto posible???
-				console.log(pagina.name);
-				console.log(pagina.father);
+
+				/* 
+				console.log("Pagina seleccionada: " + pagina.name + ".html");
+				console.log("Padre de esta pagína:" + pagina.father + ".html");				
 				console.log(pagina.descendents);
-				console.log(pagina.descendents[0].father);
-
-				// set the new menu target
-				document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagina.father}")`);
-
+				if (!(pagina.descendents === null)) {console.log(pagina.descendents[0].father);}
+				*/
+				
+				// set the DOM place to download or to scroll
+				let pag4 = document.querySelector("#Pag4");
+				
+				// set the new menu target andf load unlesh the pagina would 'pruebas'
+				if (!((pagina.name == 'pruebas') && (pagina.father == 'pruebas'))) {
+					document.querySelector('#pruebas a').setAttribute('href', `javascript: selectPagina(${pagina.father})`);
+					document.querySelector('#pruebas a').setAttribute('style', 'color:red');
+					document.querySelector('#pruebas a').innerHTML = pagina.showName;
+					// disable the other menu options (por ahora no se como hacerlo...)
+					// let li = document.querySelectorAll('.menu ul li');
+					// li[1].classList.toggle('disabled');
+					// li[5].classList.toggle('disabled');
+				} else {
+					document.querySelector('#pruebas a').setAttribute('href', `javascript: selectPagina(${pagina.father})`);
+					document.querySelector('#pruebas a').setAttribute('style', '');
+					document.querySelector('#pruebas a').innerHTML = pagina.showName
+					// enable the other menu options
+					// let li = document.querySelectorAll('.menu ul li');
+					// li[1].classList.toggle('disabled');
+					// li[5].classList.toggle('disabled');
+				}
+					
 				// set the file name
 				let filename = pagina.name + '.html';
-
-				// set the DOM place to download
-				let pag4 = document.querySelector("#Pag4");
+				
 				// requiero la pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
-				// más adelante....:-(
-
+				// más adelante....:-(	
 				request(filename, pag4);
-
+				
 				// scroll a #Pag4
 				// actual posición de la Pag4
 				let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
 				let pag4Top = pag4.getBoundingClientRect().top - headerHeight;
 				
-				console.log("El top de la Pag4 está ahora a " + pag4Top + "px");
+				// console.log("El top de la Pag4 está ahora a " + pag4Top + "px");
 
-				// goto a Pag4
-				window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
+				// goto a Pag4 (me desplazo x pixels en un sentido y otro)
+				window.scrollBy({top: pag4Top, left: 0, behavior: "auto",	});
 
 			}
 
