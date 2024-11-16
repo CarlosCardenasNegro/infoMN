@@ -71,7 +71,7 @@
 							<li><a href="#Pag3" title="Como lo hacemos">Como lo hacemos</a></li>
 						</ul>
 					</li>
-					<li id="pruebas"><a href="javascript: request('pruebas.html')" title="Pruebas diagnósticas">Pruebas</a></li>
+					<li id="pruebas"><a href="javascript: selectPagina(pruebas)" title="Pruebas diagnósticas">Pruebas</a></li>
 					<li><a href="" title="Usuarios...">Login</a></li>
 					<li class="language"><a href="" title="Seleccionar Idioma...">Idioma</a>
 						<ul>
@@ -373,7 +373,7 @@
 						<h1>Cardiología</h1>
 						<p>Permite valorar el estado del riego sanguíneo cardiaco y determinar en algunos casos la extensión y localización
 							de áreas de	infarto de miocardio.</p>
-						<a href="javascript:selectPagina('cardiologia')"><span class="shadow-4">Para saber más...</span></a>
+						<a href="javascript:selectPagina(cardiologia)"><span class="shadow-4">Para saber más...</span></a>
 					</div>
 				</div>
 
@@ -384,7 +384,7 @@
 						<p>Permite valorar el riego sanguíneo pulmonar, lo que, tiene gran valor
 							en los casos de embolia pulmonar aguda y crónica. Puede valorar la reserva pulmonar
 							prequirúrgica, de interés, en procesos tumorales.</p>
-						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+						<a href="javascript:selectPagina(neumologia)"><span class="shadow-4">Para saber más...</span></a>
 					</div>
 				</div>
 
@@ -510,6 +510,8 @@
 	</div> <!--container -->
 
 	<script>
+		"use strict";
+
 		// Constants
 		const header = document.querySelector('header');
 		
@@ -524,6 +526,91 @@
 		const language = document.querySelector('.language');
 		const idioma = document.querySelector('.language ul');
 		
+		/**
+		 * Voy a cambiar la estrategia:
+		 * Crearé un array con los nombres y
+		 * buscaré el menu elegido y a partir
+		 * de ahi estableceré el previo...
+		*/
+		/**
+		 * getters and setters
+		 * Si aplico # delante del nombre de las propiedades de la clase se hacen 'private'
+		 * y solo se podran recuperar usando los métodos get and set...
+		 * null .. no descendents...
+		 */
+		class menuOpt {
+			// private properties
+			#name;						//filename
+			#father;					//ascendent menu
+			#descendents;			//descendents menues
+
+			constructor(name, father, descendents) {
+				this.#name = name;
+				this.#father = father;
+				this.#descendents = descendents;
+			}
+			// getter and setters
+			// #name
+			get name() {return this.#name;}
+
+			set name(newName) {
+				if(newName) {
+					this.#name = newName;
+				} else {
+					console.log ('invalid name property')
+				}
+			}
+			// #father
+			get father() {return this.#father;}
+
+			set father(newfather) {
+				if(newfather) {
+					this.#name = newfather;
+				} else {
+					console.log ('invalid name property')
+				}
+			}
+
+			//#descendents
+			get descendents() {return this.#descendents;}
+
+			set fathdescendentser(newDescendents) {
+				if(newDescendents) {
+					this.#name = newDescendents;
+				} else {
+					console.log ('invalid name property')
+				}
+			}
+		}
+		
+		// NOTA: para obtener el nombre de un clase se llama al constructor de la clase -> 'class.constructor.name'
+		const mibi = new menuOpt('mibi', 'cardiologia', null);
+		const amiloidosis = new menuOpt('amiloidosis', 'cardiologia', null);
+		const cardiologia = new menuOpt('cardiologia', 'pruebas', [mibi, amiloidosis]);
+		
+		/**
+		 * Uso:
+		 *  cardiologia.father => 'pruebas'
+		 *  cardiologia.descendents[0] => 'perfusion' o cardiologia.descendents[0].name  => 'perfusion'
+		 *  cardiologia.descendents[0].father => 'cardiologia'
+		 *  cardiologia.descendents[0].descendents => null
+		 */ 
+		
+		const perfPulmonar = new menuOpt('perfusion', 'neumologia', null);
+		const ventilacion = new menuOpt('ventilacion', 'neumologia', null);
+		const neumologia = new menuOpt('neumologia', 'pruebas', [perfPulmonar, ventilacion]);
+
+		const nefrourologia = new menuOpt('nefrourologia', 'pruebas', null);
+		const traumareuma = new menuOpt('traumareuma', 'pruebas', null);
+		const neurologia = new menuOpt('neurologia', 'pruebas', null);
+		const endocrinologia = new menuOpt('endocrinologia', 'pruebas', null);
+		const digestivo = new menuOpt('digestivo', 'pruebas', null);
+		const terapia = new menuOpt('terapia', 'pruebas', null);
+		const miscelanea = new menuOpt('miscelanea', 'pruebas', null);
+		
+		// root menu
+		const pruebas = new menuOpt ('pruebas', 'pruebas', [cardiologia, neumologia, nefrourologia,traumareuma,neurologia,endocrinologia,digestivo,terapia,miscelanea]);
+
 		// Gestión de iconMovil
 		/*
 		Nos podemos encontrar ICONOS e IMAGE:
@@ -623,47 +710,53 @@
 			 * Para saberlo uso Paginas.includes('pagina') asi se si estoy en
 			 * el nivel grupo o subgrupo y de acuerdo a ello cambio el menu...
 			 * 
-			 * @param string pagina página solicitada
+			 * @param class menuOpt página solicitada
 			 */
-			//function selectPagina (pagina) {
-		
-				// modifico menú a la pagina previa -actualPagina-
-				//let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagActual}")`);
+			function selectPagina (pagina) {
+				// e esto posible???
+				console.log(pagina.name);
+				console.log(pagina.father);
+				console.log(pagina.descendents);
+				console.log(pagina.descendents[0].father);
 
-				// actualizo 'actualPagina'
-				//pagActual = pagina;
+				// set the new menu target
+				document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagina.father}")`);
 
-				// añado extensión
-				//pagina = pagina + '.html';
+				// set the file name
+				let filename = pagina.name + '.html';
 
-					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
-					// más adelante....:-(
-					//request(pagina);
-					
-					// scroll hasta #Pag4
+				// set the DOM place to download
+				let pag4 = document.querySelector("#Pag4");
+				// requiero la pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
+				// más adelante....:-(
+
+				request(filename, pag4);
+
+				// scroll a #Pag4
 				// actual posición de la Pag4
-				//let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
-				//let pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-	
-			//}
+				let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
+				let pag4Top = pag4.getBoundingClientRect().top - headerHeight;
+				// goto a Pag4
+				window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
+
+			}
 
 			/**
 			 * Carga de páginas
 			 * 
 			 * Asyncrono request
 			 * 
-			 * @param string pagina
+			 * @param string pagina archivo a recuperar 
+			 * @param DOM object destino lugar del DOM donde incrustarlo
 			 */
-			function request(pagina) {
+			function request(pagina, destino) {
 
 				var xmlhttp = new XMLHttpRequest();
 				
 				xmlhttp.onreadystatechange = function () {
 					if (this.readyState == 4 && this.status == 200) {
-						pag4.innerHTML = this.responseText;
+						destino.innerHTML = this.responseText;
 						//cuerpo.textContent = this.responseText;
-						// goto a Pag4
-						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 					}
 				};
 				xmlhttp.open("GET", pagina, true);
