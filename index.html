@@ -71,7 +71,7 @@
 							<li><a href="#Pag3" title="Como lo hacemos">Como lo hacemos</a></li>
 						</ul>
 					</li>
-					<li id="pruebas"><a href="javascript: selectPagina('pruebas')" title="Pruebas diagnósticas">Pruebas</a></li>
+					<li id="pruebas"><a href="javascript: request('pruebas.html')" title="Pruebas diagnósticas">Pruebas</a></li>
 					<li><a href="" title="Usuarios...">Login</a></li>
 					<li class="language"><a href="" title="Seleccionar Idioma...">Idioma</a>
 						<ul>
@@ -511,9 +511,9 @@
 
 	<script>
 		// Constants
-		// icon movil events
 		const header = document.querySelector('header');
-
+		
+		// icon movil events
 		const flag = document.querySelector('.flag img');
 		const iconMovil = document.querySelector('.icon-movil');
 		const menutoggle = document.querySelector('header .toggle');
@@ -523,11 +523,6 @@
 		const menuText = document.querySelector('header nav ul');
 		const language = document.querySelector('.language');
 		const idioma = document.querySelector('.language ul');
-		
-		// página actual para el cambio de Pruebas
-		// #Pag4 contiene TODAS las pruebas
-		let pagActual = 'pruebas';
-		let pagPrevia = 'pruebas';
 		
 		// Gestión de iconMovil
 		/*
@@ -540,10 +535,10 @@
 			let tagName = event.target.tagName;
 
 			switch (tagName) {
-			case 'I':
-			let iconName = event.target.parentNode.classList[0];
-				switch (iconName) {
-					case "calendar":
+				case 'I':
+				let iconName = event.target.parentNode.classList[0];
+					switch (iconName) {
+						case "calendar":
 						console.log("Haré algo con el calendario...");
 						break;
 					case "toggle":
@@ -630,7 +625,7 @@
 			 * 
 			 * @param string pagina página solicitada
 			 */
-			function selectPagina (pagina) {
+			//function selectPagina (pagina) {
 		
 				// modifico menú a la pagina previa -actualPagina-
 				//let nuevoMenu = document.querySelector('#pruebas').setAttribute('href', `javascript: selectPagina("${pagActual}")`);
@@ -639,20 +634,18 @@
 				//pagActual = pagina;
 
 				// añado extensión
-				pagina = pagina + '.html';
+				//pagina = pagina + '.html';
 
 					// requesta pagina ... se que debería usar un promise y comproibar que se ha cargado y todo eso
 					// más adelante....:-(
-					request(pagina);
+					//request(pagina);
 					
 					// scroll hasta #Pag4
 				// actual posición de la Pag4
-				let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
-				let pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
-				// goto a Pag4
-				window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
-
-			}
+				//let headerHeight = document.querySelector('header').getBoundingClientRect().height + 1;		
+				//let pag4Top = document.querySelector('#Pag4').getBoundingClientRect().top - headerHeight;
+	
+			//}
 
 			/**
 			 * Carga de páginas
@@ -669,6 +662,8 @@
 					if (this.readyState == 4 && this.status == 200) {
 						pag4.innerHTML = this.responseText;
 						//cuerpo.textContent = this.responseText;
+						// goto a Pag4
+						window.scroll({top: pag4Top, left: 0, behavior: "auto",	});
 					}
 				};
 				xmlhttp.open("GET", pagina, true);
