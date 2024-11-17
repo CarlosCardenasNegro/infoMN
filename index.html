@@ -391,11 +391,11 @@
 				<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
 					<div><img class="" src="media/images/sistemas/kidney.svg" /></div>
 					<div class="shadow-3">
-						<h1 >Nefro-Urología</h1>
+						<h1>Nefro-Urología</h1>
 						<p>Ayuda a conocer la función renal diferencial -cuanto de la función
 							total corresponde a cada riñón-. En la hidronefrosis ayuda a determinar si es aconsejable su
 							corrección quirúrgica o no.</p>
-						<a href="#"><span class="shadow-4">Para saber más...</span></a>
+						<a href="javascript:selectPagina(nefrourologia)"><span class="shadow-4">Para saber más...</span></a>
 					</div>
 				</div>
 
@@ -603,6 +603,10 @@
 		 * 
 		 *  NOTA: para obtener el nombre de un clase se llama
 		 *  al constructor de la clase -> 'class.constructor.name'
+		 * 
+		 * OJO: lo de la flechita NO es una buena idea... debería añadirlo
+		 * con css y no en la propia clase, así podría modificarlo cuando
+		 * estemos en modo responsive... 
 		 */ 
 		const mibi = 				new menuOpt ('mibi', 				'◀︎ Cardiología', 'cardiologia', null);
 		const amiloidosis = new menuOpt ('amiloidosis', '◀︎ Cardiología', 'cardiologia', null);

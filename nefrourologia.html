@@ -1,0 +1,55 @@
+<style>
+	:root {
+		--pagActual: nefrourologia
+	}
+	#Pag4 {height: unset;}
+	.gallery {align-items: flex-start;}
+	.gallery .card div:first-child {
+		display: block;
+		background: initial;
+		width: auto;
+	}
+	.gallery .card h1 {
+		line-height: 1.5rem;
+		padding: 5px !important;
+	}
+	.gallery .card img {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+	.gallery .card video {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+
+	@media screen and (orientation:portrait) and (width <= 930px) {
+		/*.gallery .card div:first-child {height:50%;}*/
+		.gallery .card img {filter: none; border-radius: 5px 5px 0px 0px;}
+		.gallery .card video {filter: none; border-radius: 5px 5px 0px 0px;height: initial; width: 100%;}
+	}
+	@media screen and (orientation:landscape) and (height < 450px) {
+		.gallery .card div h1 {font-size: 1.6rem !important;}
+		.gallery .card img {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+		.gallery .card video {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+	}
+</style>
+<h1 class="mn-text-center">Nefro-Urologia</h1>
+<h2 class="mn-text-center mn-text-theme-1">Se detallan a continuación las pruebas de Nefro-Urología Nuclear más frecuentes.</h2>
+<div class="gallery">
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div>
+			<video autoplay muted>
+					<source src="media/videos/renograma.mp4" type="video/mp4">
+			</video>			
+			<!-- <img src="media/images/MN/neumologia/JPEG/perfusion.jpeg" /> -->
+		</div>
+		<div>
+			<h1>Renograma</h1>
+			<p>Nos ofrece información fiable sobre muchos aspectos de la función renal.</p>
+			<a href="javascript:selectPagina(mibi)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/nefrourologia/JPEG/renal.jpeg" /></div>
+		<div>
+			<h1>Gammagrafía renal</h1>
+			<p>Es una prueba complementaria a la anterior que puede realizarse conjuntamente con ella pero que también ofrece información sobre la función renal independientemente. En ocasiones se solicitan ambas.</p>
+			<a href="javascript:selectPagina(amiloidosis)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+</div>

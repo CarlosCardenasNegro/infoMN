@@ -1,0 +1,45 @@
+<style>
+	:root {
+		--pagActual: neumologia
+	}
+	#Pag4 {height: unset;}
+	.gallery {align-items: flex-start;}
+	.gallery .card div:first-child {
+		display: block;
+		background: initial;
+	}
+	.gallery .card h1 {
+		line-height: 1.5rem;
+		padding: 5px !important;
+	}
+	.gallery .card img {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+
+	@media screen and (orientation:portrait) and (width <= 930px) {
+		.gallery .card img {filter: none; border-radius: 5px 5px 0px 0px;}
+	}
+	@media screen and (orientation:landscape) and (height < 450px) {
+		.gallery .card div h1 {font-size: 1.6rem !important;}
+		.gallery .card img {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+	}
+</style>
+<h1 class="mn-text-center">Neumología</h1>
+<h2 class="mn-text-center mn-text-theme-1">Se detallan a continuación las pruebas de Neumología Nuclear más frecuentes.</h2>
+<div class="gallery">
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/neumologia/JPEG/perfusion.jpeg" /></div>
+		<div>
+			<h1>Perfusión pulmonar</h1>
+			<p>Es una exploración idónea para la valoración del riego sanguineo del pulmón. Es de gran utilidad ante la sospecha de una tromboembolismo pulmonar sobretodo cuando está contraindicado el scaner (TAC).</p>
+			<a href="javascript:selectPagina(mibi)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/neumologia/JPEG/ventilacion.jpeg" /></div>
+		<div>
+			<h1>Ventilación pulmonar</h1>
+			<p>Es una prueba complementaria a la anterior. Ambas se deben realizar conjuntamente para aumentar la fiabilidad del diagnóstico de la embolia pulmonar. En ocasiones no es necesaria.</p>
+			<a href="javascript:selectPagina(amiloidosis)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+</div>
