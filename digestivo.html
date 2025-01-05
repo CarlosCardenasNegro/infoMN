@@ -1,0 +1,52 @@
+<style>
+	:root {
+		--pagActual: digestivo
+	}
+	#Pag4 {height: unset;}
+	.gallery {align-items: flex-start;}
+	.gallery .card div:first-child {
+		display: block;
+		background: initial;
+		width: auto;
+	}
+	.gallery .card h1 {
+		line-height: 1.5rem;
+		padding: 5px !important;
+	}
+	.gallery .card img {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+	.gallery .card video {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
+
+	@media screen and (orientation:portrait) and (width <= 930px) {
+		/*.gallery .card div:first-child {height:50%;}*/
+		.gallery .card img {filter: none; border-radius: 5px 5px 0px 0px;}
+		.gallery .card video {filter: none; border-radius: 5px 5px 0px 0px;height: initial; width: 100%;}
+	}
+	@media screen and (orientation:landscape) and (height < 450px) {
+		.gallery .card div h1 {font-size: 1.6rem !important;}
+		.gallery .card img {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+		.gallery .card video {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
+	}
+</style>
+<h1 class="mn-text-center">Digestivo</h1>
+<h2 class="mn-text-center mn-text-theme-1">Se detallan a continuación las pruebas de Gastroenterología -digestivo- Nuclear más útiles.</h2>
+<div class="gallery">
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div>
+			<img src="media/images/MN/digestivo/JPEG/esofago.jpeg" />
+		</div>
+		<div>
+			<h1>Aclaramiento esofágico</h1>
+			<p>Nos da una visión de la eficacia del esófago para conducir el bolo alimenticio hasta el estómago y de sus posibles alteraciones.</p>
+			<a href="javascript:selectPagina(esofago)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+
+	<div class="card flex flex-row flex-content-space-around animate_appear shadow-1">
+		<div><img src="media/images/MN/digestivo/JPEG/reflujo.jpeg" /></div>
+		<div>
+			<h1>Reflujo gastroesofágico</h1>
+			<p>Mediante esta prueba podemos complementar la información ofrecida por otras técnicas diagnósticas como la phmetría, la manometría y la endoscopia, sobretodo cuando estas no son definitivamente concluyentes. Con frecuencia se realiza conjuntamente con la anterior.</p>
+			<a href="javascript:selectPagina(reflujo)"><span>Información detallada...</span></a>
+		</div>
+	</div>
+</div>
