@@ -627,7 +627,11 @@
 
 		const neurologia = 			new menuOpt('neurologia', 'pruebas', null);
 		const endocrinologia = 	new menuOpt('endocrinologia', 'pruebas', null);
-		const digestivo = 			new menuOpt('digestivo', 'pruebas', null);
+
+		const esofago =  			new menuOpt('esofago', '◀︎ Digestivo', 'digestivo',null);
+		const reflujo =  			new menuOpt('reflujo', '◀︎ Digestivo', 'digestivo',null);
+		const digestivo = 			new menuOpt('digestivo', '◀︎ Pruebas', 'pruebas', [esofago, reflujo]);
+		
 		const terapia = 				new menuOpt('terapia', 'pruebas', null);
 		const miscelanea = 			new menuOpt('miscelanea', 'pruebas', null);
 		
