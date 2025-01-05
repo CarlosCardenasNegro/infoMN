@@ -7,24 +7,19 @@
 	.gallery .card div:first-child {
 		display: block;
 		background: initial;
-		width: auto;
 	}
 	.gallery .card h1 {
 		line-height: 1.5rem;
 		padding: 5px !important;
 	}
 	.gallery .card img {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
-	.gallery .card video {filter: none; border-radius: 5px 0px 0px 5px;height: 100%;}
 
 	@media screen and (orientation:portrait) and (width <= 930px) {
-		/*.gallery .card div:first-child {height:50%;}*/
 		.gallery .card img {filter: none; border-radius: 5px 5px 0px 0px;}
-		.gallery .card video {filter: none; border-radius: 5px 5px 0px 0px;height: initial; width: 100%;}
 	}
 	@media screen and (orientation:landscape) and (height < 450px) {
 		.gallery .card div h1 {font-size: 1.6rem !important;}
 		.gallery .card img {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
-		.gallery .card video {height: -webkit-fill-available; border-radius: 5px 0px 0px 5px;}
 	}
 </style>
 <h1 class="mn-text-center">Digestivo</h1>
