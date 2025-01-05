@@ -290,6 +290,10 @@ header {
 	width: 50%;
 	border-radius: 5px 0px 0px 5px;
 }
+.gallery .card img {
+	width: -webkit-fill-available;
+	filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4));
+}
 .gallery .card div {
 	width: 50%;
 	height: 95%;
@@ -302,10 +306,6 @@ header {
   height: 100%;
   background: linear-gradient(#a9bcff, #a3ceb3);
   border-radius: 5px 0px 0px 5px;
-}
-.gallery .card img {
-  width: -webkit-fill-available;
-	filter:drop-shadow(3px 5px 10px rgba(0,0,0,.4));
 }
 /* nota: las card no van a cambiar de tamaño asi que todo ira fijo...¡¡ */
 .gallery .card h1 {
